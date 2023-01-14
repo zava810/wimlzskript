@@ -68,7 +68,7 @@ export default function Home() {
               </div>
             </CSSTransition>
             }
-            <section className='py-20 min-h-screen flex flex-col px-5 items-start'>
+            <section className='py-20 flex flex-col px-5 items-start'>
               <div className='mt-10 mb-5 dark:text-slate-200 leading-9'>
                 <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1>
                 <h3 className='text-5xl font-medium '>I&apos;m Vishnu</h3>
@@ -88,6 +88,32 @@ export default function Home() {
                 <div className='flex flex-col items-center'>
                   <span className=' text-xs scroll-bounce '>Scroll Down</span>
                   <span><BiChevronsDown/></span>
+                </div>
+              </div>
+            </section>
+            {/* About Section */}
+            <section className='flex flex-col py-10 px-5'>
+              <div className='flex flex-col justify-start'>
+                <h2 className=' dark:text-slate-200 text-2xl pb-10'>About Me</h2>
+                <p className='dark:text-slate-400 leading-7'>Hello! My name is Vishnu and I&apos;m passionate about creating visually stunning and user-friendly web interfaces.
+                  I have a strong background in front-end technologies such as HTML, CSS, JavaScript, and experience with popular front-end frameworks and libraries
+                  such as React, Angular. I am skilled in creating responsive, mobile-friendly websites.
+                  I have experience in multiple project and industries, from simple landing pages to complex web applications. 
+                  I am always up for new challenges and love to stay updated with new technologies and trends in the industry.
+                  Currently I&apos;m working as Software Engineer at QBurst Technologies.
+                </p>
+                <p className='dark:text-slate-400 py-4'>Here are few technologies I&apos;ve been working with recently:</p>
+                <div className='flex justify-start dark:text-slate-400 leading-9 px-5'>
+                  <ul className='pr-10 list-circle'>
+                    <li className='text-teal-500'> <span className='text-slate-400'>JavaScript</span></li>
+                    <li className='text-teal-500'><span className='text-slate-400'>Angular</span></li>
+                    <li className='text-teal-500'> <span className='text-slate-400'>TypeScript</span></li>
+                  </ul>
+                  <ul className='list-circle'>
+                    <li className='text-teal-500'> <span className='text-slate-400'>Next.js</span></li>
+                    <li className='text-teal-500'><span className='text-slate-400'>Tailwind</span></li>
+                    <li className='text-teal-500'><span className='text-slate-400'>ReactJS</span></li>
+                  </ul>
                 </div>
               </div>
             </section>
