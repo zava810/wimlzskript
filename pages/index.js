@@ -3,8 +3,10 @@ import styles from '../styles/Home.module.css'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import { AiOutlineClose, AiFillLinkedin, AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
+import { BiChevronsDown } from 'react-icons/bi'
 import { useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
+import Router from 'next/router'
 
 
 export default function Home() {
@@ -20,8 +22,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <section className='py-5 px-2 min-h-screen dark:bg-neutral-900 bg'>
-          <div className=' flex justify-between px-5'>
+        <div className='py-5 px-2 min-h-screen dark:bg-neutral-900 bg'>
+          <div className=' flex justify-between px-5 mb-20'>
             <h1 className='text-4xl cursor-pointer dark:text-slate-200'>Vishnu</h1>
             <div className='flex'>
                 <ul className='items-center dark:text-slate-200'>
@@ -66,7 +68,30 @@ export default function Home() {
               </div>
             </CSSTransition>
             }
-        </section>
+            <section className='py-20 min-h-screen flex flex-col px-5 items-start'>
+              <div className='mt-10 mb-5 dark:text-slate-200 leading-9'>
+                <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1>
+                <h3 className='text-5xl font-medium '>I&apos;m Vishnu</h3>
+                <h4 className='text-2xl'>Software Engineer @ <a href="https://www.qburst.com" target="_blank" rel="noreferrer"><span className='text-red-700'>Q</span>Burst</a></h4>
+                <p className=' text-stone-600'>Front-end Developer | Electronics Enthusiast</p>
+                <p className=' leading-8'>I am a front-end software engineer with 1 year of experience in creating 
+                  user-friendly and visually appealing web interfaces using technologies such as HTML, CSS, JavaScript 
+                  and frameworks such as React, Angular.</p>
+              </div>
+              <div className='flex items-center justify-center '>
+                <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-500 border-2 border-teal-500 rounded-3xl transition ease-in'
+                onClick={() => Router.push('/about')}>
+                  About Me
+                </button>
+              </div>
+              <div className=' text-slate-200 flex justify-center w-full mt-14'>
+                <div className='flex flex-col items-center'>
+                  <span className=' text-xs scroll-bounce '>Scroll Down</span>
+                  <span><BiChevronsDown/></span>
+                </div>
+              </div>
+            </section>
+        </div>
       </main>
     </div>
   )
