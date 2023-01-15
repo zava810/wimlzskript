@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { MdDarkMode, MdLightMode } from 'react-icons/md'
+import { MdDarkMode, MdLightMode, MdLocationOn } from 'react-icons/md'
 import {GiHamburgerMenu} from 'react-icons/gi'
-import { AiOutlineClose, AiFillLinkedin, AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
+import { AiOutlineClose, AiFillLinkedin, AiFillGithub, AiOutlineInstagram, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { BiChevronsDown } from 'react-icons/bi'
 import { useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
@@ -12,7 +12,9 @@ import Router from 'next/router'
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true)
   const [hamMenu, setHamMenu] = useState(false);
+  const [experienceOpen, setExperienceOpen] = useState(false)
   const nodeRef = useRef(null);
+  const expRef  = useRef(null);
   return (
     <div className={darkMode ? 'dark' : ''}>
       <Head>
@@ -115,6 +117,40 @@ export default function Home() {
                     <li className='text-teal-500'><span className='text-slate-400'>ReactJS</span></li>
                   </ul>
                 </div>
+              </div>
+            </section>
+            {/* Experience Section */}
+            <section className='flex flex-col py-10 px-5'>
+              <div className='flex flex-col justify-start'>
+                <h2 className='dark:text-slate-200 text-2xl pb-5'>Where I&apos;ve Worked</h2>
+                <div className='flex justify-between items-center'>
+                  <div>
+                    <h4 className=' dark:text-slate-200 text-lg'>Software Engineer @ <a href="https://www.qburst.com"><span className=' text-red-600'>Q</span>Burst</a></h4>
+                    <p className='text-slate-400 italic text-sm pt-2 mb-3'>August 2021 - Present</p>
+                  </div>
+                  <div className=' dark:text-slate-200' onClick={() => setExperienceOpen(!experienceOpen)}>
+                    {experienceOpen ? <AiOutlineMinus/>  : <AiOutlinePlus/>}
+                  </div>
+                </div>
+                <CSSTransition nodeRef={expRef} in={experienceOpen} timeout={500} unmountOnExit classNames='experience'>
+                  <div ref={expRef} className='rounded-xl p-2 dark:bg-slate-800 bg-[#E5E7E9] flex flex-col'>
+                    <div className='flex items-center dark: text-slate-400 my-2'>
+                      <span className='px-2 text-teal-500'><MdLocationOn/></span>
+                      <p className=' text-sm'>Kochi, Kerala</p>
+                    </div>
+                    <div className='flex px-2 dark:text-slate-400'>
+                      <p>Developing front-end application solutions using Angular framework</p>
+                    </div>
+                    <div className='flex justify-center py-3'>
+                      <ul className='flex items-center text-sm justify-around w-full'>
+                        <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>JavaScript</li>
+                        <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>Angular</li>
+                        <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>HTML</li>
+                        <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>CSS</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CSSTransition>
               </div>
             </section>
         </div>
