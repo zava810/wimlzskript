@@ -4,9 +4,12 @@ import { MdDarkMode, MdLightMode, MdLocationOn } from 'react-icons/md'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import { AiOutlineClose, AiFillLinkedin, AiFillGithub, AiOutlineInstagram, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { BiChevronsDown } from 'react-icons/bi'
+import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
 import { useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group';
 import Router from 'next/router'
+import Image from 'next/image';
+import InstagramClone from '../public/Instagram-Clone.png';
 
 
 export default function Home() {
@@ -151,6 +154,27 @@ export default function Home() {
                     </div>
                   </div>
                 </CSSTransition>
+              </div>
+            </section>
+            {/* Projects */}
+            <section className='flex flex-col py-5 px-5'>
+              <div className='flex'>
+                <h2 className=' dark:text-slate-200 text-2xl pb-5'>Things I&apos;ve Built</h2>
+              </div>
+              <div className='flex flex-wrap py-3'>
+                <div className='rounded-xl project-tile flex flex-col items-center dark:text-slate-200 w-full overflow-hidden dark:bg-slate-800 sm:w-1/3'>
+                  <div className=' overflow-hidden'>
+                  <Image src={InstagramClone} alt="instagramClone" width={600}  height={600}  className='project-img'/>
+                  </div>
+                  <div className='flex flex-col w-full justify-start py-4 px-10'>
+                    <h4 className='py-1 text-xl'>Instagram Clone Web App</h4>
+                    <p className='subtext text-slate-400 text-sm'>Web Development</p>
+                    <p className='subtext-open text-teal-400 text-sm flex items-center cursor-pointer font-medium'>
+                      <span className='mr-2'>View project</span>
+                      <HiOutlineArrowNarrowRight/>
+                    </p>
+                  </div>
+                </div>
               </div>
             </section>
         </div>

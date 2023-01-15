@@ -67,3 +67,36 @@ animation: scroll-bounce 6s ease infinite;
   transform: translateY(-30px);
   transition: opacity 300ms, transform 300ms;
 }
+
+.project-img {
+  transform: scale(1);
+  transition: .3s; 
+}
+
+.project-tile:hover .project-img {
+  transform: scale(1.1);
+  transition: .3s;
+}
+.subtext {
+  opacity: 1;
+  transform: translateY(5px);
+  transition: all cubic-bezier(.4,0,.2,1) .4s;
+}
+
+.project-tile:hover .subtext {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all cubic-bezier(.4,0,.2,1) .4s;
+}
+
+.subtext-open {
+  opacity: 0;
+  transform: translateY(0px);
+  transition: all cubic-bezier(.4,0,.2,1) .4s;
+}
+
+.project-tile:hover .subtext-open {
+  opacity: 1;
+  transform: translateY(-20px);
+  transition: all cubic-bezier(.4,0,.2,1) .4s;
+}
