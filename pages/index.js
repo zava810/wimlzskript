@@ -177,6 +177,19 @@ export default function Home() {
                 </div>
               </div>
             </section>
+            {/* Get in touch */}
+            <section className='flex flex-col px-5 py-5'>
+              <div className='flex flex-col justify-center'>
+                <h2 className='dark:text-slate-200 text-2xl mb-4'>Get In Touch</h2>
+                <p className=' text-slate-400 mb-5'>Thank you for visiting my portfolio website. Although I’m not currently looking for any new opportunities, my inbox is always open. 
+                  Whether you have a question or just want to say hi, I’ll try my best to get back to you!. Alternatively, you can also find me on LinkedIn. 
+                  Feel free to connect with me and view my professional profile for more information about my background and experience.
+                </p>
+                <div className='flex items-center justify-start'>
+                  <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-500 border-2 border-teal-500 rounded-3xl transition ease-in'>Contact Me</button>
+                </div>
+              </div>
+            </section>
         </div>
       </main>
     </div>
