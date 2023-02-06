@@ -18,6 +18,20 @@ export default function Home() {
   const [experienceOpen, setExperienceOpen] = useState(false)
   const nodeRef = useRef(null);
   const expRef  = useRef(null);
+
+  const socialRedirect = (platform) => {
+    if (platform === 'linkedIn') {
+      window.open("https://www.linkedin.com/in/vishnuSurendran7999", "_blank");
+    } else if (platform === 'instagram') {
+      window.open("https://www.instagram.com/", "_blank");       
+    } else if (platform === "github") {
+      window.open("https://www.github.com/Vishnuvich", "_blank");
+    }
+  }
+
+  const sendMail = () => {
+    window.location.href = "mailto:vishnuksvichu12345@gmail.com"
+  }
   return (
     <div className={darkMode ? 'dark' : ''}>
       <Head>
@@ -178,7 +192,7 @@ export default function Home() {
               </div>
             </section>
             {/* Get in touch */}
-            <section className='flex flex-col px-5 py-5'>
+            <section className='flex flex-col px-5 py-5 mb-10'>
               <div className='flex flex-col justify-center'>
                 <h2 className='dark:text-slate-200 text-2xl mb-4'>Get In Touch</h2>
                 <p className=' text-slate-400 mb-5'>Thank you for visiting my portfolio website. Although I’m not currently looking for any new opportunities, my inbox is always open. 
@@ -186,10 +200,24 @@ export default function Home() {
                   Feel free to connect with me and view my professional profile for more information about my background and experience.
                 </p>
                 <div className='flex items-center justify-start'>
-                  <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-500 border-2 border-teal-500 rounded-3xl transition ease-in'>Contact Me</button>
+                  <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-500 border-2 border-teal-500 rounded-3xl transition ease-in' onClick={() => sendMail()}>Contact Me</button>
                 </div>
               </div>
             </section>
+            <footer className='flex flex-col justify-center items-center'>
+              <div className='flex items-center justify-center mb-5 lg:hidden'>
+                  <div className='px-10'>
+                    <AiFillLinkedin onClick={() => socialRedirect("linkedIn")} className='text-black dark:text-slate-200 text-xl cursor-pointer'/>
+                  </div>
+                  <div className='px-10'>
+                    <AiFillGithub onClick={() => socialRedirect("github")} className='text-black dark:text-slate-200 text-xl cursor-pointer'/>
+                  </div>
+                  <div className='px-10'>
+                    <AiOutlineInstagram onClick={() => socialRedirect("instagram")} className='text-black dark:text-slate-200 text-xl cursor-pointer'/>
+                  </div>
+                </div>
+              <p className='italic font-light text-slate-400 text-xs'>Designed & Developed by Vishnu Surendran</p>
+            </footer>
         </div>
       </main>
     </div>
