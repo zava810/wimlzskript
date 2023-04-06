@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { MdLocationOn } from 'react-icons/md'
-import { AiFillLinkedin, AiFillGithub, AiOutlineInstagram, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { BiChevronsDown } from 'react-icons/bi'
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
 import { useRef, useState } from 'react'
@@ -158,20 +158,6 @@ export default function Home({darkMode}) {
                 </div>
               </div>
             </section>
-            <footer className='flex flex-col justify-center items-center'>
-              <div className='flex items-center justify-center mb-5 lg:hidden'>
-                  <div className='px-10'>
-                    <AiFillLinkedin onClick={() => socialRedirect("linkedIn")} className='text-black dark:text-slate-200 text-xl cursor-pointer'/>
-                  </div>
-                  <div className='px-10'>
-                    <AiFillGithub onClick={() => socialRedirect("github")} className='text-black dark:text-slate-200 text-xl cursor-pointer'/>
-                  </div>
-                  <div className='px-10'>
-                    <AiOutlineInstagram onClick={() => socialRedirect("instagram")} className='text-black dark:text-slate-200 text-xl cursor-pointer'/>
-                  </div>
-                </div>
-              <p className='italic font-light text-slate-400 text-xs'>Designed & Developed by Vishnu Surendran</p>
-            </footer>
           </div>
         </Layout>
       </div>
