@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
@@ -6,7 +8,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#0B1320',
+      },
+      fontFamily: {
+        roboto_mono: ['var(--font-roboto-mono)', ...fontFamily.sans],
+        roboto: ['var(--font-roboto)', ...fontFamily.sans]
+      }
+    },
     listStyleType: {
       circle: 'circle'
     }

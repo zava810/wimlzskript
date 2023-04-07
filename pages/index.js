@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import { MdLocationOn } from 'react-icons/md'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { BiChevronsDown } from 'react-icons/bi'
@@ -16,6 +15,7 @@ export default function Home({darkMode}) {
   const [experienceOpen, setExperienceOpen] = useState(false)
   // const [darkMode, setDarkMode] = useState(true)
   const expRef  = useRef(null);
+  const name = "Vishnu Surendran";
 
   const socialRedirect = (platform) => {
     if (platform === 'linkedIn') {
@@ -41,23 +41,32 @@ export default function Home({darkMode}) {
       <div>
         <Layout>
           <div className='lg:px-16 lg:mx-auto lg:max-w-5xl'>
-            <section className='py-20 flex flex-col px-5 items-start '>
-              <div className='mt-10 mb-5 dark:text-slate-200 leading-9'>
-                <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1>
-                <h3 className='text-5xl font-medium '>I&apos;m Vishnu</h3>
-                <h4 className='text-2xl'>Software Engineer @ <a href="https://www.qburst.com" target="_blank" rel="noreferrer"><span className='text-red-700'>Q</span>Burst</a></h4>
-                <p className=' text-stone-600'>Front-end Developer | Electronics Enthusiast</p>
-                <p className=' leading-8'>I am a front-end software engineer with 1 year of experience in creating 
-                  user-friendly and visually appealing web interfaces using technologies such as HTML, CSS, JavaScript 
-                  and frameworks such as React, Angular.</p>
+            <section className='py-5 flex flex-col px-5 justify-center min-h-screen'>
+              <div className='flex flex-col justify-center h-[80vh]'>
+                <div className='mt-10 mb-8 dark:text-slate-200 leading-9'>
+                  {/* <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1> */}
+                  <h6 className='text-teal-500 mb-4 text-lg font-roboto_mono'>Hi, my name is,</h6>
+                  <h3 className='text-5xl font-medium font-roboto'>
+                  {name.split('').map((letter) => {
+                    return (
+                    <span className='text-hover cursor-pointer' key={letter}>{letter}</span>
+                    )}
+                    )}
+                  </h3>
+                  <h4 className='text-2xl'>Software Engineer @ <a href="https://www.qburst.com" target="_blank" rel="noreferrer"><span className='text-red-700'>Q</span>Burst</a></h4>
+                  <p className=' text-stone-600'>Front-end Developer | Electronics Enthusiast</p>
+                  <p className=' leading-8'>I am a front-end software engineer with 1 year of experience in creating 
+                    user-friendly and visually appealing web interfaces using technologies such as HTML, CSS, JavaScript 
+                    and frameworks such as React, Angular.</p>
+                </div>
+                <div className='flex items-center justify-start '>
+                  <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-500 border-2 border-teal-500 rounded-3xl transition ease-in'
+                  onClick={() => Router.push('/about')}>
+                    Get My Resume
+                  </button>
+                </div>
               </div>
-              <div className='flex items-center justify-center '>
-                <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-500 border-2 border-teal-500 rounded-3xl transition ease-in'
-                onClick={() => Router.push('/about')}>
-                  About Me
-                </button>
-              </div>
-              <div className=' text-slate-200 flex justify-center w-full mt-14'>
+              <div className=' text-slate-200 flex justify-center items-center w-full h-[20vh]'>
                 <div className='flex flex-col items-center'>
                   <span className=' text-xs scroll-bounce '>Scroll Down</span>
                   <span><BiChevronsDown/></span>

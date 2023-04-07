@@ -11,25 +11,25 @@ export default function Header ({darkMode, setDarkMode}) {
     const nodeRef = useRef(null);
     return (
         <>
-        <div className=' flex justify-between px-5 mb-20'>
+        <div className='flex justify-between px-5 fixed w-full'>
             <h1 className='text-4xl cursor-pointer dark:text-slate-200'>Vishnu</h1>
             <div className='flex'>
                 <ul className='flex items-center dark:text-slate-200'>
+                  <li className=' cursor-pointer text-2xl pr-2' onClick={() => setDarkMode(!darkMode)}>
+                    {/* <div className='p-2 hover:bg-neutral-700 hover:text-slate-200 dark:hover:bg-slate-200 dark:hover:text-gray-900 transition ease-in rounded-xl'>
+                      { darkMode ? <MdDarkMode/> : <MdLightMode/>}
+                    </div> */}
+                  </li>
                   <li className='px-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Home</li>
                   <li className='px-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Blog</li>
                   <li className='px-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Skills</li>
                   <li className='px-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Contact</li>
-                  <li className=' cursor-pointer text-2xl pr-2' onClick={() => setDarkMode(!darkMode)}>
-                    <div className='p-2 hover:bg-neutral-700 hover:text-slate-200 dark:hover:bg-slate-200 dark:hover:text-gray-900 transition ease-in rounded-xl'>
-                      { darkMode ? <MdDarkMode/> : <MdLightMode/>}
-                    </div>
-                    </li>
                 </ul>
-                <div className='dark:text-slate-200 flex flex-col justify-center items-center lg:hidden cursor-pointer text-2xl' 
+                <div className='dark:text-slate-200 flex-col justify-center items-center cursor-pointer text-2xl flex lg:hidden' 
                   onClick={() => setHamMenu(!hamMenu)}> 
                   {hamMenu ? <AiOutlineClose/> : <GiHamburgerMenu/>}
                 </div>
-              </div>
+            </div>
           </div>
           { 
           <CSSTransition nodeRef={nodeRef} in={hamMenu} timeout={500} unmountOnExit classNames='hamMenu'>
