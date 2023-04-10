@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { slideDown } from '../../utils/Animations';
+import { Link as ScrollLink } from 'react-scroll'
 
 
 export default function Header ({darkMode, setDarkMode}) {
@@ -29,9 +30,12 @@ export default function Header ({darkMode, setDarkMode}) {
                   </Link>
                   <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Blog</li>
                   <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Skills</li>
-                  <Link href='#contact'>
-                    <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Contact</li>
-                  </Link>
+                  
+                    <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>
+                      <ScrollLink activeClass="active" to="contact" spy={true} smooth={true} duration={50}>
+                        Contact
+                      </ScrollLink>
+                    </li>
                 </ul>
                 <div className='dark:text-slate-200 flex-col justify-center items-center cursor-pointer text-2xl flex lg:hidden' 
                   onClick={() => setHamMenu(!hamMenu)}> 
