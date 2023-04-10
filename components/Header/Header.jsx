@@ -1,23 +1,24 @@
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import { AiOutlineClose, AiFillLinkedin, AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
-import { CSSTransition } from 'react-transition-group';
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { slideDown } from '../../utils/Animations';
 
 
 export default function Header ({darkMode, setDarkMode}) {
     // const [darkMode, setDarkMode] = useState(true)
     const [hamMenu, setHamMenu] = useState(false);
-    const nodeRef = useRef(null);
     return (
         <>
-        <div className='navbar flex justify-between px-5 py-5 fixed w-full'>
-          <Link href='/'> 
-            <h1 className='text-4xl cursor-pointer dark:text-slate-200'>Vishnu</h1>
-          </Link>
+        <div className={'py-5 fixed w-full z-20 shadow-xl' + (hamMenu ? ' bg-primary' : ' navbar-blur')}>
+          <nav className='flex justify-between px-5'>
+            <Link href='/'> 
+              <h1 className='text-xl md:text-xl lg:text-xl cursor-pointer text-slate-200 hover:text-teal-500 transition ease-in'>Vishnu.dev</h1>
+            </Link>
             <div className='flex'>
-                <ul className='flex items-center dark:text-slate-200'>
+                <ul className='hidden lg:flex items-center dark:text-slate-200'>
                   <li className=' cursor-pointer text-2xl pr-2' onClick={() => setDarkMode(!darkMode)}>
                     {/* <div className='p-2 hover:bg-neutral-700 hover:text-slate-200 dark:hover:bg-slate-200 dark:hover:text-gray-900 transition ease-in rounded-xl'>
                       { darkMode ? <MdDarkMode/> : <MdLightMode/>}
@@ -37,32 +38,33 @@ export default function Header ({darkMode, setDarkMode}) {
                   {hamMenu ? <AiOutlineClose/> : <GiHamburgerMenu/>}
                 </div>
             </div>
-          </div>
-          { 
-          <CSSTransition nodeRef={nodeRef} in={hamMenu} timeout={500} unmountOnExit classNames='hamMenu'>
-            <div ref={nodeRef} className='py-20 flex justify-between flex-col'>
+          </nav>
+          { hamMenu &&
+            <div className='overflow-hidden lg:hidden'>
+            <motion.div className='py-20 flex justify-between flex-col w-full h-screen bg-primary' initial='initial' animate='animate' variants={slideDown}>
               <div className='pb-20'>
-                <ul className='flex items-center text-center flex-col text-xl font-medium text-black dark:text-slate-200'>
-                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b w-full'>Home</li>
-                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b w-full'>Blog</li>
-                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b w-full'>Skills</li>
-                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b w-full'>Contact</li>
+                <ul className='flex items-center text-center flex-col text-lg md:text-xl font-medium text-black dark:text-slate-200'>
+                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>Home</li>
+                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>Blog</li>
+                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>Skills</li>
+                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>Contact</li>
                 </ul>
               </div>
                 <div className='flex items-center justify-center'>
                   <div className='px-10'>
-                    <AiFillLinkedin className='text-black dark:text-slate-200 text-xl cursor-pointer'/>
+                    <AiFillLinkedin className='text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer'/>
                   </div>
                   <div className='px-10'>
-                    <AiFillGithub className='text-black dark:text-slate-200 text-xl cursor-pointer'/>
+                    <AiFillGithub className='text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer'/>
                   </div>
                   <div className='px-10'>
-                    <AiOutlineInstagram className='text-black dark:text-slate-200 text-xl cursor-pointer'/>
+                    <AiOutlineInstagram className='text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer'/>
                   </div>
                 </div>
-              </div>
-            </CSSTransition>
+              </motion.div>
+            </div>
             }
+        </div>
         </>
     )
 }
