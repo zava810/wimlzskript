@@ -47,9 +47,9 @@ export default function Home({darkMode}) {
               <div className='flex flex-col justify-center h-[80vh]'>
                 <div className='mt-10 mb-8 dark:text-slate-200 leading-9'>
                   {/* <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1> */}
-                  <h6 className='text-teal-500 mb-4 text-lg font-roboto_mono'>Hi, my name is,</h6>
+                  <h6 className='text-teal-500 mb-4 text-md font-roboto_mono'>Hi, my name is,</h6>
                   <div className='overflow-hidden'>
-                    <motion.h3 className='text-5xl font-medium font-roboto' variants={textUpFade}>
+                    <motion.h3 className='text-6xl font-bold font-roboto' variants={textUpFade}>
                     {name.split('').map((letter, i) => {
                       if (letter.trim().length) {
                         return <span className='text-hover cursor-pointer px-[1px]' key={i}>{letter}</span>
@@ -61,13 +61,13 @@ export default function Home({darkMode}) {
                   </motion.h3>
                   </div>
                   <h4 className='text-2xl'>Software Engineer @ <a href="https://www.qburst.com" target="_blank" rel="noreferrer"><span className='text-red-700'>Q</span>Burst</a></h4>
-                  <p className=' text-stone-600'>Front-end Developer | Electronics Enthusiast</p>
-                  <p className=' leading-8'>I am a front-end software engineer with 1 year of experience in creating 
+                  <p className=' text-teal-500 mb-3'>Front-end Developer | Electronics Enthusiast</p>
+                  <p className=' leading-8 text-md text-slate-400'>I am a front-end software engineer with 1 year of experience in creating 
                     user-friendly and visually appealing web interfaces using technologies such as HTML, CSS, JavaScript 
                     and frameworks such as React, Angular.</p>
                 </div>
                 <div className='flex items-center justify-start '>
-                  <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-500 border-2 border-teal-500 rounded-3xl transition ease-in'
+                  <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-400 border-2 border-teal-400 rounded-3xl transition ease-in'
                   onClick={() => Router.push('/about')}>
                     Get My Resume
                   </button>
@@ -83,7 +83,7 @@ export default function Home({darkMode}) {
             {/* About Section */}
             <section className='flex flex-col py-10 px-5'>
               <div className='flex flex-col justify-start'>
-                <h2 className=' dark:text-slate-200 text-2xl pb-10' id='skills'>About Me</h2>
+                <h2 className=' dark:text-slate-200 text-2xl mb-10' id='skills'>About Me</h2>
                 <p className='dark:text-slate-400 leading-7'>Hello! My name is Vishnu and I&apos;m passionate about creating visually stunning and user-friendly web interfaces.
                   I have a strong background in front-end technologies such as HTML, CSS, JavaScript, and experience with popular front-end frameworks and libraries
                   such as React, Angular. I am skilled in creating responsive, mobile-friendly websites.
@@ -109,7 +109,7 @@ export default function Home({darkMode}) {
             {/* Experience Section */}
             <section className='flex flex-col py-10 px-5'>
               <div className='flex flex-col justify-start'>
-                <h2 className='dark:text-slate-200 text-2xl pb-5'>Where I&apos;ve Worked</h2>
+                <h2 className='dark:text-slate-200 text-2xl mb-10'>Where I&apos;ve Worked</h2>
                 <div className='flex justify-between items-center'>
                   <div>
                     <h4 className=' dark:text-slate-200 text-lg'>Software Engineer @ <a href="https://www.qburst.com"><span className=' text-red-600'>Q</span>Burst</a></h4>
@@ -123,7 +123,7 @@ export default function Home({darkMode}) {
                   <div ref={expRef} className='rounded-xl p-2 dark:bg-slate-800 bg-[#E5E7E9] flex flex-col'>
                     <div className='flex items-center dark: text-slate-400 my-2'>
                       <span className='px-2 text-teal-500'><MdLocationOn/></span>
-                      <p className=' text-sm'>Kochi, Kerala</p>
+                      <p className=' text-xs'>Kochi, Kerala</p>
                     </div>
                     <div className='flex px-2 dark:text-slate-400'>
                       <p>Developing front-end application solutions using Angular framework</p>
@@ -141,9 +141,9 @@ export default function Home({darkMode}) {
               </div>
             </section>
             {/* Projects */}
-            <section className='flex flex-col py-5 px-5'>
+            <section className='flex flex-col py-10 px-5'>
               <div className='flex'>
-                <h2 className=' dark:text-slate-200 text-2xl pb-5'>Things I&apos;ve Built</h2>
+                <h2 className=' dark:text-slate-200 text-2xl mb-10'>Things I&apos;ve Built</h2>
               </div>
               <div className='flex flex-wrap py-3'>
                 <div className='rounded-xl project-tile flex flex-col items-center dark:text-slate-200 w-full overflow-hidden dark:bg-slate-800 sm:w-1/3'>
@@ -162,10 +162,10 @@ export default function Home({darkMode}) {
               </div>
             </section>
             {/* Get in touch */}
-            <section className='flex flex-col px-5 py-5 mb-10'>
+            <section className='flex flex-col px-5 py-10 mb-10 box'>
               <div className='flex flex-col justify-center'>
-                <h2 className='dark:text-slate-200 text-2xl mb-4' id='contact'>Get In Touch</h2>
-                <p className=' text-slate-400 mb-5'>Thank you for visiting my portfolio website. Although I’m not currently looking for any new opportunities, my inbox is always open. 
+                <h2 className='dark:text-slate-200 text-2xl mb-10' id='contact'>Get In Touch</h2>
+                <p className=' text-slate-400 mb-5 leading-7'>Thank you for visiting my portfolio website. Although I’m not currently looking for any new opportunities, my inbox is always open. 
                   Whether you have a question or just want to say hi, I’ll try my best to get back to you!. Alternatively, you can also find me on LinkedIn. 
                   Feel free to connect with me and view my professional profile for more information about my background and experience.
                 </p>
