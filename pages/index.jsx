@@ -40,7 +40,7 @@ export default function Home({darkMode}) {
       </Head>
       <div>
         <Layout>
-          <div className='lg:px-16 lg:mx-auto lg:max-w-5xl'>
+          <div className='lg:mx-auto lg:max-w-5xl'>
             <section className='py-5 flex flex-col px-5 justify-center min-h-screen'>
               <div className='flex flex-col justify-center h-[80vh]'>
                 <div className='mt-10 mb-8 dark:text-slate-200 leading-9'>
@@ -151,7 +151,7 @@ export default function Home({darkMode}) {
                   <Image src={InstagramClone} alt="instagramClone" width={600}  height={600}  className='project-img'/>
                   </div>
                   <div className='flex flex-col w-full justify-start py-4 px-10'>
-                    <h4 className='py-1 text-xl'>Instagram Clone Web App</h4>
+                    <h4 className='py-1 text-lg'>Instagram Clone Web App</h4>
                     <p className='subtext text-slate-400 text-sm'>Web Development</p>
                     <p className='subtext-open text-teal-400 text-sm flex items-center cursor-pointer font-medium'>
                       <span className='mr-2'>View project</span>
