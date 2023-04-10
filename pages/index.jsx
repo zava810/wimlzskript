@@ -4,19 +4,17 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 import { BiChevronsDown } from 'react-icons/bi'
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
 import { useRef, useState } from 'react'
-import { CSSTransition } from 'react-transition-group';
 import Router from 'next/router'
 import Image from 'next/image';
 import InstagramClone from '../public/Instagram-Clone.png';
 import Layout from './layout'
 import { motion } from 'framer-motion'
-import { textUpFade } from '../utils/Animations'
+import { slideDown, textUpFade } from '../utils/Animations'
 
 
 export default function Home({darkMode}) {
   const [experienceOpen, setExperienceOpen] = useState(false)
   // const [darkMode, setDarkMode] = useState(true)
-  const expRef  = useRef(null);
   const name = "Vishnu Surendran";
 
   const socialRedirect = (platform) => {
@@ -119,25 +117,27 @@ export default function Home({darkMode}) {
                     {experienceOpen ? <AiOutlineMinus/>  : <AiOutlinePlus/>}
                   </div>
                 </div>
-                <CSSTransition nodeRef={expRef} in={experienceOpen} timeout={500} unmountOnExit classNames='experience'>
-                  <div ref={expRef} className='rounded-xl p-2 dark:bg-slate-800 bg-[#E5E7E9] flex flex-col'>
-                    <div className='flex items-center dark: text-slate-400 my-2'>
-                      <span className='px-2 text-teal-500'><MdLocationOn/></span>
-                      <p className=' text-xs'>Kochi, Kerala</p>
-                    </div>
-                    <div className='flex px-2 dark:text-slate-400'>
-                      <p>Developing front-end application solutions using Angular framework</p>
-                    </div>
-                    <div className='flex justify-center py-3'>
-                      <ul className='flex items-center text-sm justify-around w-full'>
-                        <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>JavaScript</li>
-                        <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>Angular</li>
-                        <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>HTML</li>
-                        <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>CSS</li>
-                      </ul>
-                    </div>
+                  {experienceOpen && 
+                  <div className='overflow-hidden'>
+                    <motion.div className='rounded-xl p-2 dark:bg-slate-800 bg-[#E5E7E9] flex flex-col' variants={slideDown}>
+                      <div className='flex items-center dark: text-slate-400 my-2'>
+                        <span className='px-2 text-teal-500'><MdLocationOn/></span>
+                        <p className=' text-xs'>Kochi, Kerala</p>
+                      </div>
+                      <div className='flex px-2 dark:text-slate-400'>
+                        <p>Developing front-end application solutions using Angular framework</p>
+                      </div>
+                      <div className='flex justify-center py-3'>
+                        <ul className='flex items-center text-sm justify-around w-full'>
+                          <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>JavaScript</li>
+                          <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>Angular</li>
+                          <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>HTML</li>
+                          <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>CSS</li>
+                        </ul>
+                      </div>
+                    </motion.div>
                   </div>
-                </CSSTransition>
+                  }
               </div>
             </section>
             {/* Projects */}
