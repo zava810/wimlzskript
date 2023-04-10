@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <>
                     <footer className='flex flex-col justify-center items-center'>
-              <div className='flex items-center justify-center mb-5 lg:hidden'>
+              <div className='flex items-center justify-center mb-5'>
                   <div className='px-10'>
                     <AiFillLinkedin onClick={() => socialRedirect("linkedIn")} className='text-black dark:text-slate-200 text-xl cursor-pointer'/>
                   </div>

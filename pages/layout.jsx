@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   const [darkMode, setDarkMode] = useState(true);
   return (
     <>
-      <div className="py-5 px-2 min-h-screen dark:bg-primary">
+      <div className="pb-5 px-2 min-h-screen dark:bg-primary">
         <Header darkMode={darkMode} setDarkMode={setDarkMode} />
         {children}
         <Footer />

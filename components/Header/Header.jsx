@@ -3,6 +3,7 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import { AiOutlineClose, AiFillLinkedin, AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
 import { CSSTransition } from 'react-transition-group';
 import { useRef, useState } from 'react'
+import Link from 'next/link';
 
 
 export default function Header ({darkMode, setDarkMode}) {
@@ -11,8 +12,10 @@ export default function Header ({darkMode, setDarkMode}) {
     const nodeRef = useRef(null);
     return (
         <>
-        <div className='flex justify-between px-5 fixed w-full'>
+        <div className='navbar flex justify-between px-5 py-5 fixed w-full'>
+          <Link href='/'> 
             <h1 className='text-4xl cursor-pointer dark:text-slate-200'>Vishnu</h1>
+          </Link>
             <div className='flex'>
                 <ul className='flex items-center dark:text-slate-200'>
                   <li className=' cursor-pointer text-2xl pr-2' onClick={() => setDarkMode(!darkMode)}>
@@ -20,10 +23,14 @@ export default function Header ({darkMode, setDarkMode}) {
                       { darkMode ? <MdDarkMode/> : <MdLightMode/>}
                     </div> */}
                   </li>
-                  <li className='px-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Home</li>
-                  <li className='px-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Blog</li>
-                  <li className='px-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Skills</li>
-                  <li className='px-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Contact</li>
+                  <Link href='/'>
+                    <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Home</li>
+                  </Link>
+                  <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Blog</li>
+                  <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Skills</li>
+                  <Link href='#contact'>
+                    <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Contact</li>
+                  </Link>
                 </ul>
                 <div className='dark:text-slate-200 flex-col justify-center items-center cursor-pointer text-2xl flex lg:hidden' 
                   onClick={() => setHamMenu(!hamMenu)}> 

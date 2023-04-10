@@ -47,10 +47,16 @@ export default function Home({darkMode}) {
                   {/* <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1> */}
                   <h6 className='text-teal-500 mb-4 text-lg font-roboto_mono'>Hi, my name is,</h6>
                   <h3 className='text-5xl font-medium font-roboto'>
-                  {name.split('').map((letter) => {
-                    return (
-                    <span className='text-hover cursor-pointer' key={letter}>{letter}</span>
-                    )}
+                  {name.split('').map((letter, i) => {
+                    if (letter.trim().length) {
+                      return <span className='text-hover cursor-pointer px-[1px]' key={i}>{letter}</span>
+                    } else {
+                      return <span key={i}> </span>
+                    }
+                    // return (
+                    // <span className='text-hover cursor-pointer' key={letter}>{letter}</span>
+                    // )
+                  }
                     )}
                   </h3>
                   <h4 className='text-2xl'>Software Engineer @ <a href="https://www.qburst.com" target="_blank" rel="noreferrer"><span className='text-red-700'>Q</span>Burst</a></h4>
@@ -76,7 +82,7 @@ export default function Home({darkMode}) {
             {/* About Section */}
             <section className='flex flex-col py-10 px-5'>
               <div className='flex flex-col justify-start'>
-                <h2 className=' dark:text-slate-200 text-2xl pb-10'>About Me</h2>
+                <h2 className=' dark:text-slate-200 text-2xl pb-10' id='skills'>About Me</h2>
                 <p className='dark:text-slate-400 leading-7'>Hello! My name is Vishnu and I&apos;m passionate about creating visually stunning and user-friendly web interfaces.
                   I have a strong background in front-end technologies such as HTML, CSS, JavaScript, and experience with popular front-end frameworks and libraries
                   such as React, Angular. I am skilled in creating responsive, mobile-friendly websites.
@@ -157,7 +163,7 @@ export default function Home({darkMode}) {
             {/* Get in touch */}
             <section className='flex flex-col px-5 py-5 mb-10'>
               <div className='flex flex-col justify-center'>
-                <h2 className='dark:text-slate-200 text-2xl mb-4'>Get In Touch</h2>
+                <h2 className='dark:text-slate-200 text-2xl mb-4' id='contact'>Get In Touch</h2>
                 <p className=' text-slate-400 mb-5'>Thank you for visiting my portfolio website. Although I’m not currently looking for any new opportunities, my inbox is always open. 
                   Whether you have a question or just want to say hi, I’ll try my best to get back to you!. Alternatively, you can also find me on LinkedIn. 
                   Feel free to connect with me and view my professional profile for more information about my background and experience.
