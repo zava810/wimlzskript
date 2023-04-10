@@ -17,16 +17,6 @@ export default function Home({darkMode}) {
   // const [darkMode, setDarkMode] = useState(true)
   const name = "Vishnu Surendran";
 
-  const socialRedirect = (platform) => {
-    if (platform === 'linkedIn') {
-      window.open("https://www.linkedin.com/in/vishnuSurendran7999", "_blank");
-    } else if (platform === 'instagram') {
-      window.open("https://www.instagram.com/", "_blank");       
-    } else if (platform === "github") {
-      window.open("https://www.github.com/Vishnuvich", "_blank");
-    }
-  }
-
   const sendMail = () => {
     window.location.href = "mailto:vishnuksvichu12345@gmail.com"
   }
