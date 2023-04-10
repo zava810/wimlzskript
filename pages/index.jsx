@@ -65,7 +65,7 @@ export default function Home({darkMode}) {
                     and frameworks such as React, Angular.</p>
                 </div>
                 <div className='flex items-center justify-start '>
-                  <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-400 border-2 border-teal-400 rounded-3xl transition ease-in'
+                  <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-600 border-2 border-teal-400 rounded-3xl transition ease-in'
                   onClick={() => Router.push('/about')}>
                     Get My Resume
                   </button>
