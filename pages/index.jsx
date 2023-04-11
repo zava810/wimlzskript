@@ -9,7 +9,7 @@ import Image from 'next/image';
 import InstagramClone from '../public/Instagram-Clone.png';
 import Layout from './layout'
 import { motion } from 'framer-motion'
-import { slideDown, textUpFade } from '../utils/Animations'
+import { slideDown, textUpFade, typingContainer, typingText } from '../utils/Animations'
 
 
 export default function Home({darkMode}) {
@@ -37,10 +37,10 @@ export default function Home({darkMode}) {
                   {/* <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1> */}
                   <h6 className='text-teal-500 mb-4 text-sm md:text-base font-roboto_mono'>Hi, my name is,</h6>
                   <div className='overflow-hidden'>
-                    <motion.h3 className='text-4xl md:text-5xl lg:text-6xl font-bold font-roboto' variants={textUpFade}>
+                    <motion.h3 className='text-4xl md:text-5xl lg:text-6xl font-bold font-roboto' variants={typingContainer}>
                     {name.split('').map((letter, i) => {
                       if (letter.trim().length) {
-                        return <span className='text-hover cursor-pointer px-[1px]' key={i}>{letter}</span>
+                        return <motion.span className='text-hover cursor-pointer px-[1px]' key={i} variants={typingText}>{letter}</motion.span>
                       } else {
                         return <span key={i}> </span>
                       }

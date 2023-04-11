@@ -27,3 +27,30 @@ export const slideDown = {
         }
     }
 }
+
+export const typingContainer = {
+    initial: {
+        opacity: 0,
+        y: -10
+    },
+    animate: {
+        y: 0,
+        opacity:1,
+        transition: {
+            staggerChildren: 0.2,
+            ease: 'easeIn'
+        }
+    }
+}
+
+export const typingText = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity:1,
+        transition: {
+            ease: 'easeIn'
+        }
+    }
+}
