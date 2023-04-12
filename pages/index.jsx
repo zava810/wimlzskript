@@ -18,7 +18,7 @@ export default function Home({darkMode}) {
   // const [darkMode, setDarkMode] = useState(true)
   const name = "Vishnu Surendran";
   const [text] = useTypewriter({
-    words: ["I am Vishnu Surendran", "Front-end Web Developer", "Electronics Enthusiast"],
+    words: ["<I am Vishnu Surendran/>", "<Front-end Web Developer/>", "<Electronics Enthusiast/>"],
     loop: 0,
   })
 
@@ -69,7 +69,7 @@ export default function Home({darkMode}) {
             </motion.section>
             {/* About Section */}
             <section className='flex flex-col py-10 px-5'>
-              <motion.div className='flex flex-col justify-start leading-6 md:leading-7 lg:leading-8 text-sm md:text-base' initial={'initial'} whileInView={'animate'}        viewport={{once: true, amount: 1}} transition={{staggerChildren: 0.2}}>
+              <motion.div className='flex flex-col justify-start leading-6 md:leading-7 lg:leading-8 text-sm md:text-base' initial={'initial'} whileInView={'animate'}        viewport={{once: true, amount: 0.7}} transition={{staggerChildren: 0.2}}>
                 <motion.h2 variants={slideFromLeft} className=' dark:text-slate-200 text-2xl mb-10' id='skills'>About Me</motion.h2>
                 <motion.p variants={slideFromRight} className='dark:text-slate-400 '>Hello! My name is Vishnu and I&apos;m passionate about creating visually stunning and user-friendly web interfaces.
                   I have a strong background in front-end technologies such as HTML, CSS, JavaScript, and experience with popular front-end frameworks and libraries
@@ -78,7 +78,9 @@ export default function Home({darkMode}) {
                   I am always up for new challenges and love to stay updated with new technologies and trends in the industry.
                   Currently I&apos;m working as Software Engineer at QBurst Technologies.
                 </motion.p>
-                <motion.p variants={slideFromRight} className='dark:text-slate-400 py-4'>Here are few technologies I&apos;ve been working with recently:</motion.p>
+                <motion.p variants={slideFromRight} className='dark:text-slate-400 py-4' id='skills'>
+                  Here are few technologies I&apos;ve been working with recently:
+                </motion.p>
                 <motion.div className='flex justify-start dark:text-slate-400 leading-9 px-5'>
                   <motion.ul className='pr-10 list-circle'>
                     <motion.li variants={slideFromRight} className='text-teal-500'> <span className='text-slate-400'>JavaScript</span></motion.li>
@@ -95,7 +97,7 @@ export default function Home({darkMode}) {
             </section>
             {/* Experience Section */}
             <section className='flex flex-col py-10 px-5'>
-              <motion.div className='flex flex-col justify-start' initial={'initial'} whileInView={'animate'} viewport={{once: true, amount: 1}} transition={{staggerChildren: 0.2}}>
+              <motion.div className='flex flex-col justify-start' initial={'initial'} whileInView={'animate'} viewport={{once: true, amount: 0.7}} transition={{staggerChildren: 0.2}}>
                 <motion.h2 variants={slideFromLeft} className='dark:text-slate-200 text-2xl mb-10'>Where I&apos;ve Worked</motion.h2>
                 <motion.div variants={fadeIn} className='flex justify-between items-center'>
                   <div>
@@ -132,9 +134,9 @@ export default function Home({darkMode}) {
               </motion.div>
             </section>
             {/* Projects */}
-            <motion.section className='flex flex-col py-10 px-5' initial={'initial'} whileInView={'animate'} viewport={{once: true, amount: 1}} transition={{staggerChildren: 0.2}}>
+            <motion.section className='flex flex-col py-10 px-5' initial={'initial'} whileInView={'animate'} viewport={{once: true, amount: 0.7}} transition={{staggerChildren: 0.2}}>
               <div className='flex'>
-                <motion.h2 variants={slideFromLeft} className=' dark:text-slate-200 text-2xl mb-10'>Things I&apos;ve Built</motion.h2>
+                <motion.h2 variants={slideFromLeft} className=' dark:text-slate-200 text-2xl mb-10' id='projects'>Things I&apos;ve Built</motion.h2>
               </div>
               <motion.div variants={fadeUp} className='flex flex-wrap py-3 px-5 sm:px-0'>
                 <div className='rounded-xl project-tile flex flex-col items-center dark:text-slate-200 w-full overflow-hidden dark:bg-slate-800 sm:w-1/2 md:w-1/3'>
@@ -154,7 +156,7 @@ export default function Home({darkMode}) {
             </motion.section>
             {/* Get in touch */}
             <section className='flex flex-col px-5 py-10 mb-10 box'>
-              <motion.div className='flex flex-col justify-center' initial={'initial'} whileInView={'animate'} viewport={{once: true, amount: 1}} transition={{staggerChildren: 0.2}}>
+              <motion.div className='flex flex-col justify-center' initial={'initial'} whileInView={'animate'} viewport={{once: true, amount: 0.7}} transition={{staggerChildren: 0.2}}>
                 <motion.h2 variants={slideFromLeft} className='dark:text-slate-200 text-2xl mb-10' id='contact'>Get In Touch</motion.h2>
                 <motion.p variants={slideFromRight} className=' text-slate-400 mb-5 leading-6 md:leading-7 lg:leading-8 text-sm md:text-base'>Thank you for visiting my portfolio website. Although I’m not currently looking for any new opportunities, my inbox is always open. 
                   Whether you have a question or just want to say hi, I’ll try my best to get back to you!. Alternatively, you can also find me on LinkedIn. 
