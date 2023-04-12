@@ -10,12 +10,17 @@ import InstagramClone from '../public/Instagram-Clone.png';
 import Layout from './layout'
 import { AnimatePresence, motion } from 'framer-motion'
 import { slideDown, textUpFade, typingContainer, typingText } from '../utils/Animations'
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 
 export default function Home({darkMode}) {
   const [experienceOpen, setExperienceOpen] = useState(false)
   // const [darkMode, setDarkMode] = useState(true)
   const name = "Vishnu Surendran";
+  const [text] = useTypewriter({
+    words: ["I am Vishnu Surendran", "Front-end Web Developer", "Electronics Enthusiast"],
+    loop: 0,
+  })
 
   const sendMail = () => {
     window.location.href = "mailto:vishnuksvichu12345@gmail.com"
@@ -35,9 +40,9 @@ export default function Home({darkMode}) {
               <div className='flex flex-col justify-center h-[80vh]'>
                 <div className='mt-10 mb-8 dark:text-slate-200 leading-9'>
                   {/* <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1> */}
-                  <h6 className='text-teal-500 mb-4 text-sm md:text-base font-roboto_mono'>Hi, my name is,</h6>
+                  <h6 className='text-teal-500 mb-4 text-sm md:text-base font-roboto_mono'>Hey there, <span className='text-xl md:text-2xl hand-wave'>\uD83D\uDC4B\uD83C\uDFFB</span></h6>
                   <div className='overflow-hidden'>
-                    <motion.h3 className='text-4xl md:text-5xl lg:text-6xl font-bold font-roboto' variants={typingContainer}>
+                    {/* <motion.h3 className='text-4xl md:text-5xl lg:text-6xl font-bold font-roboto' variants={typingContainer}>
                     {name.split('').map((letter, i) => {
                       if (letter.trim().length) {
                         return <motion.span className='text-hover cursor-pointer px-[1px]' key={i} variants={typingText}>{letter}</motion.span>
@@ -46,13 +51,17 @@ export default function Home({darkMode}) {
                       }
                     }
                     )}
-                  </motion.h3>
+                  </motion.h3> */}
+                    <h3 className='text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight font-roboto-mono mb-3'>
+                      <span>{text}</span>
+                      <Cursor cursorColor='#14B8A6'/>
+                    </h3>
                   </div>
-                  <h4 className='text-lg md:text-xl lg:text-2xl'>Software Engineer @ <a href="https://www.qburst.com" target="_blank" rel="noreferrer"><span className='text-red-700'>Q</span>Burst</a></h4>
-                  <p className=' text-teal-500 mb-3 text-sm md:text-base'>Front-end Developer | Electronics Enthusiast</p>
-                  <p className=' leading-6 md:leading-7 lg:leading-8 text-slate-400 text-sm md:text-base'>I am a front-end software engineer with 1 year of experience in creating 
+                  <h4 className='text-lg md:text-xl lg:text-xl '> <span className='text-teal-500'>Software Engineer</span> @ <a href="https://www.qburst.com" target="_blank" rel="noreferrer"><span className='text-red-700'>Q</span>Burst</a></h4>
+                  {/* <p className=' text-teal-500 mb-3 text-sm md:text-base'>Front-end Developer | Electronics Enthusiast</p> */}
+                  <p className=' leading-6 md:leading-7 lg:leading-8 text-slate-400 text-sm md:text-base'>I am a front-end software engineer with more than 1 year of experience in creating 
                     user-friendly and visually appealing web interfaces using technologies such as HTML, CSS, JavaScript 
-                    and frameworks such as React, Angular.</p>
+                    and frameworks such as Angular, React JS, and Next.JS.</p>
                 </div>
                 <div className='flex items-center justify-start '>
                   <button className='px-8 py-3 text-slate-200 hover:bg-teal-600 border-2 border-teal-400 rounded-3xl transition ease-in text-sm md:text-base'
