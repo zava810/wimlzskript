@@ -16,26 +16,35 @@ export default function Header ({darkMode, setDarkMode}) {
         <div className={'py-5 fixed w-full z-20 shadow-xl' + (hamMenu ? ' bg-primary' : ' navbar-blur')}>
           <nav className='flex justify-between px-5'>
             <Link href='/'> 
-              <h1 className='text-xl md:text-xl lg:text-xl cursor-pointer text-slate-200 hover:text-teal-500 transition ease-in'>Vishnu.dev</h1>
+              <h1 className='text-base cursor-pointer text-slate-200 hover:text-teal-500 transition ease-in'>Vishnu.dev</h1>
             </Link>
             <div className='flex'>
-                <ul className='hidden lg:flex items-center dark:text-slate-200'>
+                <ul className='hidden lg:flex items-center dark:text-slate-200 text-base'>
                   <li className=' cursor-pointer text-2xl pr-2' onClick={() => setDarkMode(!darkMode)}>
                     {/* <div className='p-2 hover:bg-neutral-700 hover:text-slate-200 dark:hover:bg-slate-200 dark:hover:text-gray-900 transition ease-in rounded-xl'>
                       { darkMode ? <MdDarkMode/> : <MdLightMode/>}
                     </div> */}
                   </li>
-                  <Link href='/'>
-                    <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Home</li>
-                  </Link>
-                  <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Blog</li>
-                  <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>Skills</li>
-                  
-                    <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>
-                      <ScrollLink activeClass="active" to="contact" spy={true} smooth={true} duration={50}>
-                        Contact
-                      </ScrollLink>
-                    </li>
+                  <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>
+                    <ScrollLink activeClass="active" to="skills" spy={true} smooth={true} duration={50}>
+                      Skills
+                    </ScrollLink>
+                  </li>
+                  <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>
+                    <ScrollLink activeClass="active" to="projects" spy={true} smooth={true} duration={50} offset={-200}>
+                      Projects
+                    </ScrollLink>
+                  </li>
+                  <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>
+                    <ScrollLink activeClass="active" to="blog" spy={true} smooth={true} duration={50}>
+                      Blog
+                    </ScrollLink>
+                  </li>
+                  <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>
+                    <ScrollLink activeClass="active" to="contact" spy={true} smooth={true} duration={50}>
+                      Contact
+                    </ScrollLink>
+                  </li>
                 </ul>
                 <div className='dark:text-slate-200 flex-col justify-center items-center cursor-pointer text-2xl flex lg:hidden' 
                   onClick={() => setHamMenu(!hamMenu)}> 
@@ -49,9 +58,21 @@ export default function Header ({darkMode, setDarkMode}) {
               <motion.div className='py-20 flex justify-between flex-col w-full h-screen bg-primary' initial='initial' animate='animate' variants={slideDown} exit={slideDown.exit}>
                 <div className='pb-20'>
                   <ul className='flex items-center text-center flex-col text-lg md:text-xl font-medium text-black dark:text-slate-200'>
-                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full' onClick={() => setHamMenu(!hamMenu)}>Home</li>
-                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full' onClick={() => setHamMenu(!hamMenu)}>Blog</li>
-                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full' onClick={() => setHamMenu(!hamMenu)}>Skills</li>
+                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
+                      <ScrollLink className='w-full block' activeClass="active" to="skills" spy={true} smooth={true} duration={50} onClick={() => setHamMenu(!hamMenu)}>
+                        Skills
+                      </ScrollLink>
+                    </li>
+                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
+                      <ScrollLink className='w-full block' activeClass="active" to="projects" spy={true} smooth={true} duration={50} offset={-200} onClick={() => setHamMenu(!hamMenu)}>
+                        Projects
+                      </ScrollLink>
+                    </li>
+                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
+                      <ScrollLink className='w-full block' activeClass="active" to="blog" spy={true} smooth={true} duration={50} onClick={() => setHamMenu(!hamMenu)}>
+                        Blog
+                      </ScrollLink>
+                    </li>
                     <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
                       <ScrollLink className='w-full block' activeClass="active" to="contact" spy={true} smooth={true} duration={50} onClick={() => setHamMenu(!hamMenu)}>
                         Contact

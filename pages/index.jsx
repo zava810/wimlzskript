@@ -78,7 +78,9 @@ export default function Home({darkMode}) {
                   I am always up for new challenges and love to stay updated with new technologies and trends in the industry.
                   Currently I&apos;m working as Software Engineer at QBurst Technologies.
                 </motion.p>
-                <motion.p variants={slideFromRight} className='dark:text-slate-400 py-4'>Here are few technologies I&apos;ve been working with recently:</motion.p>
+                <motion.p variants={slideFromRight} className='dark:text-slate-400 py-4' id='skills'>
+                  Here are few technologies I&apos;ve been working with recently:
+                </motion.p>
                 <motion.div className='flex justify-start dark:text-slate-400 leading-9 px-5'>
                   <motion.ul className='pr-10 list-circle'>
                     <motion.li variants={slideFromRight} className='text-teal-500'> <span className='text-slate-400'>JavaScript</span></motion.li>
@@ -134,7 +136,7 @@ export default function Home({darkMode}) {
             {/* Projects */}
             <motion.section className='flex flex-col py-10 px-5' initial={'initial'} whileInView={'animate'} viewport={{once: true, amount: 1}} transition={{staggerChildren: 0.2}}>
               <div className='flex'>
-                <motion.h2 variants={slideFromLeft} className=' dark:text-slate-200 text-2xl mb-10'>Things I&apos;ve Built</motion.h2>
+                <motion.h2 variants={slideFromLeft} className=' dark:text-slate-200 text-2xl mb-10' id='projects'>Things I&apos;ve Built</motion.h2>
               </div>
               <motion.div variants={fadeUp} className='flex flex-wrap py-3 px-5 sm:px-0'>
                 <div className='rounded-xl project-tile flex flex-col items-center dark:text-slate-200 w-full overflow-hidden dark:bg-slate-800 sm:w-1/2 md:w-1/3'>
