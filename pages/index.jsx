@@ -8,7 +8,7 @@ import Router from 'next/router'
 import Image from 'next/image';
 import InstagramClone from '../public/Instagram-Clone.png';
 import Layout from './layout'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { slideDown, textUpFade, typingContainer, typingText } from '../utils/Animations'
 
 
@@ -107,27 +107,29 @@ export default function Home({darkMode}) {
                     {experienceOpen ? <AiOutlineMinus/>  : <AiOutlinePlus/>}
                   </div>
                 </div>
+                <AnimatePresence>
                   {experienceOpen && 
-                  <div className='overflow-hidden'>
-                    <motion.div className='rounded-xl p-2 dark:bg-slate-800 bg-[#E5E7E9] flex flex-col' variants={slideDown}>
-                      <div className='flex items-center dark: text-slate-400 my-2'>
-                        <span className='px-2 text-teal-500'><MdLocationOn/></span>
-                        <p className=' text-xs'>Kochi, Kerala</p>
-                      </div>
-                      <div className='flex px-2 dark:text-slate-400 leading-6 md:leading-7 lg:leading-8 text-sm md:text-base'>
-                        <p>Developing front-end application solutions using Angular framework</p>
-                      </div>
-                      <div className='flex justify-center py-3 leading-6 md:leading-7 lg:leading-8 text-xs md:text-sm'>
-                        <ul className='flex items-center justify-around w-full'>
-                          <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>JavaScript</li>
-                          <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>Angular</li>
-                          <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>HTML</li>
-                          <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>CSS</li>
-                        </ul>
-                      </div>
-                    </motion.div>
-                  </div>
+                    <div className='overflow-hidden'>
+                      <motion.div className='rounded-xl p-2 dark:bg-slate-800 bg-[#E5E7E9] flex flex-col' variants={slideDown} exit={slideDown.exit}>
+                        <div className='flex items-center dark: text-slate-400 my-2'>
+                          <span className='px-2 text-teal-500'><MdLocationOn/></span>
+                          <p className=' text-xs'>Kochi, Kerala</p>
+                        </div>
+                        <div className='flex px-2 dark:text-slate-400 leading-6 md:leading-7 lg:leading-8 text-sm md:text-base'>
+                          <p>Developing front-end application solutions using Angular framework</p>
+                        </div>
+                        <div className='flex justify-center py-3 leading-6 md:leading-7 lg:leading-8 text-xs md:text-sm'>
+                          <ul className='flex items-center justify-around w-full'>
+                            <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>JavaScript</li>
+                            <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>Angular</li>
+                            <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>HTML</li>
+                            <li className='px-4 py-1 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>CSS</li>
+                          </ul>
+                        </div>
+                      </motion.div>
+                    </div>
                   }
+                  </AnimatePresence>
               </div>
             </section>
             {/* Projects */}
