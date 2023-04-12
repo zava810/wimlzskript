@@ -1,4 +1,6 @@
-export const textUpFade = {
+import {MotionProps} from 'framer-motion'
+
+export const fadeUp: MotionProps = {
     initial: {
         y: 100,
         opacity: 0
@@ -13,7 +15,7 @@ export const textUpFade = {
     },
 } 
 
-export const slideDown = {
+export const slideDown: MotionProps = {
     initial: {
         y: -100,
         opacity:0
@@ -36,29 +38,46 @@ export const slideDown = {
     }
 }
 
-export const typingContainer = {
+export const slideFromLeft: MotionProps = {
     initial: {
-        opacity: 0,
-        y: -10
+        x: -200,
+        opacity: 0
     },
     animate: {
-        y: 0,
+        x: 0,
         opacity:1,
         transition: {
-            staggerChildren: 0.2,
-            ease: 'easeIn'
+            duration: 0.5
         }
-    }
+    },
+} 
+
+export const slideFromRight: MotionProps = {
+    initial: {
+        x: 200,
+        opacity: 0
+    },
+    animate: {
+        x: 0,
+        opacity:1,
+        transition: {
+            duration: 0.5,
+        }
+    },
 }
 
-export const typingText = {
+export const fadeIn: MotionProps = {
     initial: {
-        opacity: 0,
+        opacity: 0
     },
     animate: {
         opacity:1,
         transition: {
-            ease: 'easeIn'
+            duration: 0.5,
         }
-    }
+    },
 }
+
+
+
+    

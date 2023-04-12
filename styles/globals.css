@@ -80,6 +80,11 @@ a {
   animation: bell 1s ease;
 }
 
+.hand-wave {
+  display: inline-block;
+  animation: bell 2s ease infinite;
+}
+
 @keyframes bell {
   0% {rotate: 0deg;}
   10% {rotate: 10deg}

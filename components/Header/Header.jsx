@@ -3,7 +3,7 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import { AiOutlineClose, AiFillLinkedin, AiFillGithub, AiOutlineInstagram } from 'react-icons/ai'
 import { useState } from 'react'
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { slideDown } from '../../utils/Animations';
 import { Link as ScrollLink } from 'react-scroll'
 
@@ -43,31 +43,37 @@ export default function Header ({darkMode, setDarkMode}) {
                 </div>
             </div>
           </nav>
-          { hamMenu &&
-            <div className='overflow-hidden lg:hidden'>
-            <motion.div className='py-20 flex justify-between flex-col w-full h-screen bg-primary' initial='initial' animate='animate' variants={slideDown}>
-              <div className='pb-20'>
-                <ul className='flex items-center text-center flex-col text-lg md:text-xl font-medium text-black dark:text-slate-200'>
-                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>Home</li>
-                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>Blog</li>
-                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>Skills</li>
-                  <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>Contact</li>
-                </ul>
-              </div>
-                <div className='flex items-center justify-center'>
-                  <div className='px-10'>
-                    <AiFillLinkedin className='text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer'/>
-                  </div>
-                  <div className='px-10'>
-                    <AiFillGithub className='text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer'/>
-                  </div>
-                  <div className='px-10'>
-                    <AiOutlineInstagram className='text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer'/>
-                  </div>
+          <AnimatePresence>
+            { hamMenu &&
+              (<div className='overflow-hidden lg:hidden'>
+              <motion.div className='py-20 flex justify-between flex-col w-full h-screen bg-primary' initial='initial' animate='animate' variants={slideDown} exit={slideDown.exit}>
+                <div className='pb-20'>
+                  <ul className='flex items-center text-center flex-col text-lg md:text-xl font-medium text-black dark:text-slate-200'>
+                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full' onClick={() => setHamMenu(!hamMenu)}>Home</li>
+                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full' onClick={() => setHamMenu(!hamMenu)}>Blog</li>
+                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full' onClick={() => setHamMenu(!hamMenu)}>Skills</li>
+                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
+                      <ScrollLink className='w-full block' activeClass="active" to="contact" spy={true} smooth={true} duration={50} onClick={() => setHamMenu(!hamMenu)}>
+                        Contact
+                      </ScrollLink>
+                    </li>
+                  </ul>
                 </div>
-              </motion.div>
-            </div>
-            }
+                  <div className='flex items-center justify-center'>
+                    <div className='px-10'>
+                      <AiFillLinkedin className='text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer'/>
+                    </div>
+                    <div className='px-10'>
+                      <AiFillGithub className='text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer'/>
+                    </div>
+                    <div className='px-10'>
+                      <AiOutlineInstagram className='text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer'/>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>)
+              }
+          </AnimatePresence>
         </div>
         </>
     )
