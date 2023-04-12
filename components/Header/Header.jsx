@@ -35,11 +35,11 @@ export default function Header ({darkMode, setDarkMode}) {
                       Projects
                     </ScrollLink>
                   </li>
-                  <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>
-                    <ScrollLink activeClass="active" to="blog" spy={true} smooth={true} duration={50}>
-                      Blog
-                    </ScrollLink>
-                  </li>
+                  <Link href='/blog'>
+                    <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>
+                      Blogs
+                    </li>
+                  </Link>
                   <li className='nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex'>
                     <ScrollLink activeClass="active" to="contact" spy={true} smooth={true} duration={50}>
                       Contact
@@ -68,11 +68,11 @@ export default function Header ({darkMode, setDarkMode}) {
                         Projects
                       </ScrollLink>
                     </li>
-                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
-                      <ScrollLink className='w-full block' activeClass="active" to="blog" spy={true} smooth={true} duration={50} onClick={() => setHamMenu(!hamMenu)}>
-                        Blog
-                      </ScrollLink>
-                    </li>
+                    <Link href='/blog'>
+                      <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
+                        Blogs
+                      </li>
+                    </Link>
                     <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
                       <ScrollLink className='w-full block' activeClass="active" to="contact" spy={true} smooth={true} duration={50} onClick={() => setHamMenu(!hamMenu)}>
                         Contact
