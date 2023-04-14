@@ -68,11 +68,11 @@ export default function Header ({darkMode, setDarkMode}) {
                         Projects
                       </ScrollLink>
                     </li>
-                    <Link href='/blog'>
-                      <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
-                        Blogs
-                      </li>
-                    </Link>
+                    <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
+                      <Link href='/blog'>
+                          Blogs
+                      </Link>
+                    </li>
                     <li className='mx-auto py-10 cursor-pointer hover:text-teal-500 transition ease-in border-b border-teal-500 w-full'>
                       <ScrollLink className='w-full block' activeClass="active" to="contact" spy={true} smooth={true} duration={50} onClick={() => setHamMenu(!hamMenu)}>
                         Contact
