@@ -1,8 +1,8 @@
-import {MotionProps} from 'framer-motion'
+import {MotionProps, Variants} from 'framer-motion'
 
-export const fadeUp: MotionProps = {
+export const fadeUp: Variants = {
     initial: {
-        y: 100,
+        y: 200,
         opacity: 0
     },
     animate: {
@@ -15,7 +15,7 @@ export const fadeUp: MotionProps = {
     },
 } 
 
-export const slideDown: MotionProps = {
+export const slideDown = {
     initial: {
         y: -100,
         opacity:0
@@ -38,7 +38,7 @@ export const slideDown: MotionProps = {
     }
 }
 
-export const slideFromLeft: MotionProps = {
+export const slideFromLeft: Variants = {
     initial: {
         x: -200,
         opacity: 0
@@ -52,7 +52,7 @@ export const slideFromLeft: MotionProps = {
     },
 } 
 
-export const slideFromRight: MotionProps = {
+export const slideFromRight: Variants = {
     initial: {
         x: 200,
         opacity: 0
@@ -66,7 +66,7 @@ export const slideFromRight: MotionProps = {
     },
 }
 
-export const fadeIn: MotionProps = {
+export const fadeIn: Variants = {
     initial: {
         opacity: 0
     },
