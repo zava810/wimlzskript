@@ -132,6 +132,6 @@ animation: scroll-bounce 6s ease infinite;
 
 .project-tile:hover .subtext-open {
   opacity: 1;
-  transform: translateY(-20px);
+  transform: translateY(-18px);
   transition: all cubic-bezier(.4,0,.2,1) .4s;
 }
