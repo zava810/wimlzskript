@@ -3,6 +3,8 @@ import Router from 'next/router'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import { fadeIn, fadeUp, slideFromLeft } from '../../utils/Animations'
 import { BiChevronsDown } from 'react-icons/bi'
+import { useEffect, useState } from 'react'
+import { getDataFromSanity } from '../../sanity/sanity-utils'
 
 type Props = {}
 
@@ -11,6 +13,19 @@ function Hero({}: Props) {
         words: ["< I am Vishnu Surendran />", "< Front-end Web Developer />", "< Electronics Enthusiast />"],
         loop: 0,
       })
+      const [heroData, setHeroData] = useState(null);
+    const getHeroData = async () => {
+      const data = await getDataFromSanity('Hero', false);
+      if (data.length) {
+        setHeroData(data[0]);
+        console.log(data);
+      }
+    }
+    
+    useEffect(() => {
+      getHeroData();
+    }, [])
+    
   return (
     <motion.section className='py-5 flex flex-col px-5 justify-center min-h-screen' initial={'initial'} animate={'animate'} transition={{staggerChildren: 0.2}}>
     <div className='flex flex-col justify-center h-[80vh]'>
@@ -23,7 +38,14 @@ function Hero({}: Props) {
             <Cursor cursorColor='#14B8A6'/>
           </h3>
         </motion.div>
-        <motion.h4 variants={fadeIn} className='text-lg md:text-xl lg:text-xl '> <span className='text-teal-500'>Software Engineer</span> @ <a href="https://www.qburst.com" target="_blank" rel="noreferrer"><span className='text-red-700'>Q</span>Burst</a></motion.h4>
+        <motion.h4 variants={fadeIn} className='text-lg md:text-xl lg:text-xl flex'>
+          <span className='text-teal-500 pr-2'>{heroData?.destination}</span> @ 
+          <a href={heroData?.companyUrl} target="_blank" rel="noreferrer">
+            <p className='company-name pl-2'>
+              {heroData?.organization}
+            </p>
+          </a>
+        </motion.h4>
         {/* <p className=' text-teal-500 mb-3 text-sm md:text-base'>Front-end Developer | Electronics Enthusiast</p> */}
         <motion.p variants={fadeIn} className=' leading-6 md:leading-7 lg:leading-8 text-slate-400 text-sm md:text-base'>I am a front-end software engineer with more than 1 year of experience in creating 
           user-friendly and visually appealing web interfaces using technologies such as HTML, CSS, JavaScript 
