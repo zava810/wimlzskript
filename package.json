@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@next/font": "13.1.1",
+    "@portabletext/react": "^3.0.4",
+    "@sanity/vision": "^3.14.1",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "framer-motion": "^10.11.2",
@@ -22,7 +24,7 @@
     "react-simple-typewriter": "^5.0.1",
     "react-transition-group": "^4.4.5",
     "react-tsparticles": "^2.9.3",
-    "sanity": "^3.8.3",
+    "sanity": "^3.14.1",
     "styled-components": "^5.3.9",
     "tsparticles": "^2.9.3"
   },

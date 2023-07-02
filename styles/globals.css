@@ -104,6 +104,8 @@ animation: scroll-bounce 6s ease infinite;
 }
 
 .project-img {
+  height: 250px;
+  object-fit: cover;
   transform: scale(1);
   transition: .3s; 
 }
