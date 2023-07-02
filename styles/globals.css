@@ -137,3 +137,6 @@ animation: scroll-bounce 6s ease infinite;
   transform: translateY(-18px);
   transition: all cubic-bezier(.4,0,.2,1) .4s;
 }
+.company-name::first-letter {
+  color: #c53030 !important;
+}
