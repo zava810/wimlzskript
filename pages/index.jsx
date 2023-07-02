@@ -33,7 +33,7 @@ const particlesLoaded = useCallback(async container => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Particles className='z-0' id="tsparticles" init={particlesInit} loaded={particlesLoaded}  options= {particleOptions} />
+        {/* <Particles className='z-0' id="tsparticles" init={particlesInit} loaded={particlesLoaded}  options= {particleOptions} /> */}
         <div className='lg:mx-auto lg:max-w-6xl relative'>
           {/* Hero Section */}
           <Hero/>
