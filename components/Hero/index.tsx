@@ -5,6 +5,7 @@ import { fadeIn, fadeUp, slideFromLeft } from '../../utils/Animations'
 import { BiChevronsDown } from 'react-icons/bi'
 import { useEffect, useState } from 'react'
 import { getDataFromSanity } from '../../sanity/sanity-utils'
+import {PortableText} from '@portabletext/react'
 
 type Props = {}
 
@@ -47,9 +48,9 @@ function Hero({}: Props) {
           </a>
         </motion.h4>
         {/* <p className=' text-teal-500 mb-3 text-sm md:text-base'>Front-end Developer | Electronics Enthusiast</p> */}
-        <motion.p variants={fadeIn} className=' leading-6 md:leading-7 lg:leading-8 text-slate-400 text-sm md:text-base'>I am a front-end software engineer with more than 1 year of experience in creating 
-          user-friendly and visually appealing web interfaces using technologies such as HTML, CSS, JavaScript 
-          and frameworks such as Angular, React JS, and Next JS.</motion.p>
+        <motion.div variants={fadeIn} className=' leading-6 md:leading-7 lg:leading-8 text-slate-400 text-sm md:text-base'>
+          <PortableText value={heroData?.content}/>
+          </motion.div>
       </div>
       <motion.div variants={fadeIn} className='flex items-center justify-start '>
         <button className='px-8 py-3 text-slate-200 hover:bg-teal-600 border-2 border-teal-400 rounded-3xl transition ease-in text-sm md:text-base'
