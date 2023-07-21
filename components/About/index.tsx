@@ -1,34 +1,13 @@
 import {motion} from 'framer-motion'
 import { slideFromLeft, slideFromRight } from '../../utils/Animations'
-import { useEffect, useState } from 'react'
-import { getDataFromSanity } from '../../sanity/sanity-utils';
 import {PortableText} from '@portabletext/react'
+import { AboutData } from '../../utils/types';
 
-type Props = {}
+type Props = {
+  aboutData: AboutData
+}
 
-function About({}: Props) {
-  const [aboutData, setAboutData] = useState(null);
-  const [skillsArr, setSkillsArr] = useState(null);
-  const getAboutData = async () => {
-    const data = await getDataFromSanity('About', false);
-    if (data.length) {
-      setAboutData(data[0]);
-      console.log(data);
-
-      const skillsArr = data[0].skills?.reduce((acc, curr, i) => {
-        if (!(i%3)) {
-          acc.push(data[0].skills.slice(i, i+3));
-        }
-        return acc;
-      }, []);
-      setSkillsArr(skillsArr);
-      console.log(skillsArr);
-    }
-  }
-
-  useEffect(() => {
-    getAboutData();
-  },[])
+function About({aboutData}: Props) {
 
   return (
     <section className='flex flex-col py-10 px-5'>
@@ -41,7 +20,7 @@ function About({}: Props) {
         Here are few technologies I&apos;ve been working with recently:
       </motion.p>
       <motion.div className='flex justify-start dark:text-slate-400 leading-9 px-5'>
-        {skillsArr?.length && skillsArr?.map((skillArr, i) => {
+        {aboutData?.skillsArr?.length && aboutData?.skillsArr?.map((skillArr, i) => {
           return (
             <motion.ul key={i} className='pr-10 list-circle'>
             {
