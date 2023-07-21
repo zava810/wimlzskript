@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {motion, AnimatePresence} from 'framer-motion'
 import { fadeIn, slideDown, slideFromLeft } from '../../utils/Animations'
 import { MdLocationOn } from 'react-icons/md'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
-import { getDataFromSanity } from '../../sanity/sanity-utils'
 import { PortableText } from '@portabletext/react'
+import { ExperienceData } from '../../utils/types'
 
-function Experience() {
-  const [experienceData, setExperienceData] = useState(null);
+type Props = {
+  experienceData: ExperienceData[]
+}
 
-  const getExperienceData =async () => {
-    const data = await getDataFromSanity('Experience', false);
-    if (data.length) {
-      setExperienceData(data);
-      console.log('Experience', data);
-    }
-  }
-
-  useEffect(() => {
-    getExperienceData();
-  },[])
-
+function Experience({experienceData}: Props) {
   return (
     <section className='flex flex-col py-10 px-5'>
     <motion.div className='flex flex-col justify-start' initial={'initial'} whileInView={'animate'} viewport={{once: true, amount: 0.7}} transition={{staggerChildren: 0.2}}>
@@ -36,20 +26,7 @@ function Experience() {
 export default Experience
 
 
-export interface Props {
-  experienceData: {
-    designation: string,
-    company: string,
-    start: string,
-    end: string,
-    present: boolean,
-    location: string,
-    description: any,
-    skills: []
-  }
-}
-
-export function ExperienceDropDown ({experienceData}: Props) {
+export function ExperienceDropDown ({experienceData}) {
   const [experienceOpen, setExperienceOpen] = useState(false)
   const startDate = new Date(experienceData?.start);
   const formattedStartDate = startDate.toLocaleString('default', {month: 'long', year: 'numeric'});
