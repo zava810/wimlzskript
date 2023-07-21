@@ -3,29 +3,18 @@ import Router from 'next/router'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import { fadeIn, fadeUp, slideFromLeft } from '../../utils/Animations'
 import { BiChevronsDown } from 'react-icons/bi'
-import { useEffect, useState } from 'react'
-import { getDataFromSanity } from '../../sanity/sanity-utils'
 import {PortableText} from '@portabletext/react'
+import { HeroData } from '../../utils/types'
 
-type Props = {}
+type Props = {
+  heroData: HeroData
+}
 
-function Hero({}: Props) {
+function Hero({heroData}: Props) {
     const [text] = useTypewriter({
         words: ["< I am Vishnu Surendran />", "< Front-end Web Developer />", "< Electronics Enthusiast />"],
         loop: 0,
       })
-      const [heroData, setHeroData] = useState(null);
-    const getHeroData = async () => {
-      const data = await getDataFromSanity('Hero', false);
-      if (data.length) {
-        setHeroData(data[0]);
-        console.log(data);
-      }
-    }
-    
-    useEffect(() => {
-      getHeroData();
-    }, [])
     
   return (
     <motion.section className='py-5 flex flex-col px-5 justify-center min-h-screen' initial={'initial'} animate={'animate'} transition={{staggerChildren: 0.2}}>
@@ -69,4 +58,4 @@ function Hero({}: Props) {
   )
 }
 
-export default Hero
+export default Hero;
