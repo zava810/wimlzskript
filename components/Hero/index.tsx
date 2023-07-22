@@ -12,7 +12,7 @@ type Props = {
 
 function Hero({heroData}: Props) {
     const [text] = useTypewriter({
-        words: ["< I am Vishnu Surendran />", "< Front-end Web Developer />", "< Electronics Enthusiast />"],
+        words: ["<I am Vishnu Surendran/>", "<Front-end Web Developer/>", "<Electronics Enthusiast/>"],
         loop: 0,
       })
     
@@ -23,15 +23,15 @@ function Hero({heroData}: Props) {
         {/* <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1> */}
         <motion.h6 variants={slideFromLeft} className='text-teal-500 mb-4 text-sm md:text-base font-roboto_mono'>Hey there, <span className='text-xl md:text-2xl hand-wave'>\uD83D\uDC4B\uD83C\uDFFB</span></motion.h6>
         <motion.div variants={fadeIn} className='overflow-hidden'>
-          <h3 className='text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight font-roboto-mono mb-3'>
+          <h3 className='text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight font-roboto-mono mb-3 whitespace-nowrap'>
             <span>{text}</span>
             <Cursor cursorColor='#14B8A6'/>
           </h3>
         </motion.div>
-        <motion.h4 variants={fadeIn} className='text-lg md:text-xl lg:text-xl flex'>
-          <span className='text-teal-500 pr-2'>{heroData?.destination}</span> @ 
+        <motion.h4 variants={fadeIn} className='text-md md:text-xl lg:text-xl flex'>
+          <span className='text-teal-500 pr-2 whitespace-nowrap'>{heroData?.destination}</span> @ 
           <a href={heroData?.companyUrl} target="_blank" rel="noreferrer">
-            <p className='company-name pl-2'>
+            <p className='company-name pl-2 whitespace-nowrap'>
               {heroData?.organization}
             </p>
           </a>

@@ -22,11 +22,11 @@ function About({aboutData}: Props) {
       <motion.div className='flex justify-start dark:text-slate-400 leading-9 px-5'>
         {aboutData?.skillsArr?.length && aboutData?.skillsArr?.map((skillArr, i) => {
           return (
-            <motion.ul key={i} className='pr-10 list-circle'>
+            <motion.ul key={i} className={`${i !== 0 ? 'ml-10' : '' } list-circle`}>
             {
               skillArr.map((skill, j) => {
                 return (
-                  <motion.li key={j} variants={slideFromRight} className='text-teal-500'> <span className='text-slate-400'>{skill}</span></motion.li>
+                  <motion.li key={j} variants={slideFromRight} className='text-teal-500 whitespace-nowrap'> <span className='text-slate-400'>{skill}</span></motion.li>
                   )
               })
             }
