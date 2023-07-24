@@ -25,3 +25,25 @@ export async function getDataFromSanity(type, imageExist) {
     const data = await client.fetch(query)
     return data;
 }
+
+export async function getSanityDataBySlug(type, slug) {
+    const client = createClient({
+        projectId: 'h4sd5p60',
+        dataset: 'production',
+        apiVersion: '2023-04-10',
+        useCdn: false
+    })
+    const query = 
+    `*[_type == '${type}' && slug.current == '${slug}']
+    {
+    ...,
+    image {
+        asset-> {
+            _id,
+            url
+        }
+    }
+    }`;
+    const data = await client.fetch(query)
+    return data;
+}

@@ -56,9 +56,9 @@ export function ExperienceDropDown ({experienceData}) {
                 <PortableText value={experienceData?.description}/>
               </div>
               <div className='flex justify-center py-3 leading-6 md:leading-7 lg:leading-8 text-xs md:text-sm'>
-                <ul className='flex items-center justify-start w-full'>
+                <ul className='flex items-center justify-start w-full overflow-auto no-scrollbar'>
                   {experienceData?.skills?.map((skill, j) => (
-                    <li key={j} className='px-4 py-1 mx-2 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400'>{skill}</li>
+                    <li key={j} className='px-4 py-1 mx-2 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-teal-400 whitespace-nowrap'>{skill}</li>
                   ))}
                 </ul>
               </div>
