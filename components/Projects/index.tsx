@@ -3,6 +3,7 @@ import Image from 'next/image'
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
 import { fadeUp, slideFromLeft } from '../../utils/Animations'
 import { ProjectData } from '../../utils/types';
+import Link from 'next/link';
 
 type Props = {
   projectData: ProjectData[]
@@ -25,7 +26,9 @@ function Projects({projectData}: Props) {
             <h4 className='py-1 leading-6 md:leading-7 lg:leading-8 text-base md:text-lg'>{project.name}</h4>
             <p className='subtext text-slate-400 text-xs md:text-sm'>{project.category}</p>
             <p className='subtext-open text-teal-400 text-xs md:text-sm flex items-center cursor-pointer'>
+            <Link href={`/project/${project.slug.current}`}> 
               <span className='mr-2'>View project</span>
+            </Link>
               <HiOutlineArrowNarrowRight/>
             </p>
           </div>
