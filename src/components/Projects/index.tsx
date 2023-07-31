@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
@@ -6,17 +8,18 @@ import { ProjectData } from '../../utils/types';
 import Link from 'next/link';
 
 type Props = {
-  projectData: ProjectData[]
+  data: ProjectData[]
 };
 
-function Projects({projectData}: Props) {
+function Projects({data}: Props) {
+  
   return (
     <motion.section className='flex flex-col py-10 px-5' initial={'initial'} whileInView={'animate'} viewport={{once: true, amount: 0.3}} transition={{staggerChildren: 0.2}}>
     <div className='flex'>
       <motion.h2 variants={slideFromLeft} className=' dark:text-slate-200 text-2xl mb-10' id='projects'>Things I&apos;ve Built</motion.h2>
     </div>
     <motion.div className='flex flex-wrap py-3 px-0 gap-6'>
-      {projectData?.map((project) => {
+      {data?.map((project) => {
         return (
         <motion.div variants={fadeUp} key={project._id} className='rounded-xl project-tile flex flex-col items-center dark:text-slate-200 w-full box-border overflow-hidden dark:bg-slate-800 max-w-[22rem] sm:w-1/2 md:w-1/3 '>
           <div className=' overflow-hidden'>

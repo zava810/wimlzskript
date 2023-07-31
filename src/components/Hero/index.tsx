@@ -1,5 +1,7 @@
+'use client'
+
 import {motion} from 'framer-motion'
-import Router from 'next/router'
+import Router from 'next/navigation'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import { fadeIn, fadeUp, slideFromLeft } from '../../utils/Animations'
 import { BiChevronsDown } from 'react-icons/bi'
@@ -7,43 +9,48 @@ import {PortableText} from '@portabletext/react'
 import { HeroData } from '../../utils/types'
 
 type Props = {
-  heroData: HeroData
+  data: HeroData
 }
 
-function Hero({heroData}: Props) {
+function Hero({data}: Props) {
     const [text] = useTypewriter({
-        words: ["<I am Vishnu Surendran/>", "<Front-end Web Developer/>", "<Electronics Enthusiast/>"],
+        words: ["<Front-end Web Developer/>", "<Electronics Enthusiast/>"],
         loop: 0,
       })
     
   return (
-    <motion.section className='py-5 flex flex-col px-5 justify-center min-h-screen' initial={'initial'} animate={'animate'} transition={{staggerChildren: 0.2}}>
+    <motion.section className='flex flex-col px-5 justify-center' initial={'initial'} animate={'animate'} transition={{staggerChildren: 0.2}}>
     <div className='flex flex-col justify-center h-[80vh]'>
       <div className='mt-10 mb-8 dark:text-slate-200 leading-9'>
         {/* <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1> */}
         <motion.h6 variants={slideFromLeft} className='text-teal-500 mb-4 text-sm md:text-base font-roboto_mono'>Hey there, <span className='text-xl md:text-2xl hand-wave'>\uD83D\uDC4B\uD83C\uDFFB</span></motion.h6>
+        <motion.h3 variants={slideFromLeft} className='text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight font-roboto-mono mb-6 whitespace-nowrap'>
+        I&apos;m 
+          <span className='text-teal-500 ml-6'>
+            Vishnu Surendran
+          </span>  
+        </motion.h3>
         <motion.div variants={fadeIn} className='overflow-hidden'>
-          <h3 className='text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight font-roboto-mono mb-3 whitespace-nowrap'>
+          <h4 className='text-lg md:text-2xl lg:text-3xl font-medium tracking-tight font-roboto-mono mb-6 whitespace-nowrap'>
             <span>{text}</span>
             <Cursor cursorColor='#14B8A6'/>
-          </h3>
+          </h4>
         </motion.div>
         <motion.h4 variants={fadeIn} className='text-md md:text-xl lg:text-xl flex'>
-          <span className='text-teal-500 pr-2 whitespace-nowrap'>{heroData?.destination}</span> @ 
-          <a href={heroData?.companyUrl} target="_blank" rel="noreferrer">
+          <span className='text-teal-500 pr-2 whitespace-nowrap'>{data?.destination}</span> @ 
+          <a href={data?.companyUrl} target="_blank" rel="noreferrer">
             <p className='company-name pl-2 whitespace-nowrap'>
-              {heroData?.organization}
+              {data?.organization}
             </p>
           </a>
         </motion.h4>
         {/* <p className=' text-teal-500 mb-3 text-sm md:text-base'>Front-end Developer | Electronics Enthusiast</p> */}
         <motion.div variants={fadeIn} className=' leading-6 md:leading-7 lg:leading-8 text-slate-400 text-sm md:text-base'>
-          <PortableText value={heroData?.content}/>
+          <PortableText value={data?.content}/>
           </motion.div>
       </div>
       <motion.div variants={fadeIn} className='flex items-center justify-start '>
-        <button className='px-8 py-3 text-slate-200 hover:bg-teal-600 border-2 border-teal-400 rounded-3xl transition ease-in text-sm md:text-base'
-        onClick={() => Router.push('/resume')}>
+        <button className='px-8 py-3 text-slate-200 hover:bg-teal-600 border-2 border-teal-400 rounded-3xl transition ease-in text-sm md:text-base'>
           Get My Resume
         </button>
       </motion.div>

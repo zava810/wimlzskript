@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import {motion, AnimatePresence} from 'framer-motion'
 import { fadeIn, slideDown, slideFromLeft } from '../../utils/Animations'
@@ -7,16 +9,16 @@ import { PortableText } from '@portabletext/react'
 import { ExperienceData } from '../../utils/types'
 
 type Props = {
-  experienceData: ExperienceData[]
+  data: ExperienceData[]
 }
 
-function Experience({experienceData}: Props) {
+function Experience({data}: Props) {
   return (
     <section className='flex flex-col py-10 px-5'>
     <motion.div className='flex flex-col justify-start' initial={'initial'} whileInView={'animate'} viewport={{once: true, amount: 0.7}} transition={{staggerChildren: 0.2}}>
       <motion.h2 variants={slideFromLeft} className='dark:text-slate-200 text-2xl mb-10'>Where I&apos;ve Worked</motion.h2>
-      {experienceData && experienceData.length && experienceData?.map((data, i) => (
-        <ExperienceDropDown key={i} experienceData={data}/>
+      {data && data.length && data?.map((item, i) => (
+        <ExperienceDropDown key={i} experienceData={item}/>
       ))}
     </motion.div>
   </section>
