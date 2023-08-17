@@ -49,5 +49,7 @@ export interface ProjectData extends SanityBase {
             _id: string,
             url: string,
         }
-    }
+    },
+    description: any,
+    technologies: []
 }
