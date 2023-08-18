@@ -5,7 +5,7 @@ import { Button } from "../../../components/ui/button";
 import { getDataFromSanity } from "../../../../sanity/sanity-utils";
 import { ProjectData } from "../../../utils/types";
 
-export async function getData(params) {
+async function getData(params) {
   const data: ProjectData[] = await getDataFromSanity('Projects', true, params)
   return data[0];
 }
