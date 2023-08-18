@@ -54,7 +54,7 @@ export function ExperienceDropDown ({experienceData}) {
                 <span className='px-2 text-teal-500'><MdLocationOn/></span>
                 <p className=' text-xs'>{experienceData.location}</p>
               </div>
-              <div className='flex px-2 dark:text-slate-400 leading-6 md:leading-7 lg:leading-8 text-sm md:text-base'>
+              <div className='flex px-2 dark:text-slate-400 leading-6 md:leading-7 lg:leading-8 text-sm lg:text-base'>
                 <PortableText value={experienceData?.description}/>
               </div>
               <div className='flex justify-center py-3 leading-6 md:leading-7 lg:leading-8 text-xs md:text-sm'>
