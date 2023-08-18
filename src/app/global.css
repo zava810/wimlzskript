@@ -171,3 +171,50 @@ animation: scroll-bounce 6s ease infinite;
 .button:hover {
   transform: translateY(-3px);
 }
+
+
+/* Project Slider CSS */
+
+.navigation-wrapper {
+  position: relative;
+}
+
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  fill: #fff;
+  cursor: pointer;
+}
+
+.arrow-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  cursor: pointer;
+  background-color: rgba(11, 19, 32);
+  box-shadow: 0px 0px 30px 30px #0B1320;
+  border-radius: 50%;
+}
+
+.arrow--left {
+  left: 5px;
+}
+
+.arrow--right {
+  left: auto;
+  right: 5px;
+}
+
+.arrow--disabled {
+  fill: rgba(255, 255, 255, 0.5);
+}
+
+.width-prop {
+ max-width: 300px !important;
+}
