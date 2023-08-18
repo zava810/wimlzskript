@@ -18,21 +18,17 @@ const robotoMono = Roboto_Mono(
   }
   )
 
-export default function RootLayout({
-    // Layouts must accept a children prop.
-    // This will be populated with nested layouts or pages
-    children,
-  }: {
-    children: React.ReactNode
-  }) {
+export default function RootLayout(props : {children: React.ReactNode, modal: React.ReactNode}) {
+  
     return (
       <html lang="en">
-        <body>
-            <main className={`${robotoMono.variable} ${roboto.variable} font-sans`}>
+        <body className={`${robotoMono.variable} ${roboto.variable} font-sans`}>
+            <main>
                 <div className="pb-5 px-2 min-h-screen bg-primary font-roboto_mono">
                     <Header />
                         <div className='min-h-[90vh] pt-16'>
-                        {children}
+                        {props.children}
+                        {props.modal}
                         </div>
                     <Footer />
                 </div>
