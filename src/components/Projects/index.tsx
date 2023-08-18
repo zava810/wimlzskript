@@ -21,7 +21,7 @@ function Projects({data}: Props) {
     <motion.div className='flex flex-wrap py-3 px-0 gap-6'>
       {data?.map((project) => {
         return (
-        <motion.div variants={fadeUp} key={project._id} className=' custom-shadow rounded-xl project-tile flex flex-col items-center text-slate-200 w-full box-border overflow-hidden bg-lightNavy max-w-[22rem] sm:w-1/2 md:w-1/3 '>
+        <motion.div variants={fadeUp} key={project._id} className=' custom-shadow rounded-xl project-tile flex flex-col items-center text-slate-200 w-full box-border overflow-hidden bg-lightNavy min-w-[20rem] max-w-[22rem] sm:w-1/2 md:w-1/3 '>
           <div className=' overflow-hidden'>
           <Image src={project.image.asset?.url} alt="instagramClone" width={400} height={400} className='project-img'/>
           </div>
