@@ -23,7 +23,7 @@ function Hero({data}: Props) {
     <div className='flex flex-col justify-center h-[80vh]'>
       <div className='mt-10 mb-8 dark:text-slate-200 leading-9'>
         {/* <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1> */}
-        <motion.h6 variants={slideFromLeft} className='text-secondary mb-4 text-sm md:text-base font-roboto_mono'>Hey there, <span className='text-xl md:text-2xl hand-wave'>\uD83D\uDC4B\uD83C\uDFFB</span></motion.h6>
+        <motion.h6 variants={slideFromLeft} className='text-secondary mb-4 text-sm lg:text-base font-roboto_mono'>Hey there, <span className='text-xl md:text-2xl hand-wave'>\uD83D\uDC4B\uD83C\uDFFB</span></motion.h6>
         <motion.h3 variants={slideFromLeft} className='text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight font-roboto-mono mb-6 whitespace-nowrap'>
         I&apos;m 
           <span className='text-secondary ml-6'>
@@ -44,13 +44,13 @@ function Hero({data}: Props) {
             </p>
           </a>
         </motion.h4>
-        {/* <p className=' text-secondary mb-3 text-sm md:text-base'>Front-end Developer | Electronics Enthusiast</p> */}
-        <motion.div variants={fadeIn} className=' leading-6 md:leading-7 lg:leading-8 text-slate-400 text-sm md:text-base'>
+        {/* <p className=' text-secondary mb-3 text-sm lg:text-base'>Front-end Developer | Electronics Enthusiast</p> */}
+        <motion.div variants={fadeIn} className=' leading-6 md:leading-7 lg:leading-8 text-slate-400 text-sm lg:text-base'>
           <PortableText value={data?.content}/>
           </motion.div>
       </div>
       <motion.div variants={fadeIn} className='flex items-center justify-start '>
-        <button className='px-8 py-3 text-slate-200 hover:bg-teal-600 border-2 border-teal-400 rounded-3xl transition ease-in text-sm md:text-base'>
+        <button className='px-8 py-3 text-slate-200 hover:bg-teal-600 border-2 border-teal-400 rounded-3xl transition ease-in text-sm lg:text-base'>
           Get My Resume
         </button>
       </motion.div>

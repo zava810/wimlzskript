@@ -24,7 +24,7 @@ export default async function ProjectPage({ params: { id } }: { params: { id: st
             className="rounded-xl w-full object-cover h-auto lg:h-[380px]"
           />
         </div>
-        <div className="px-2 sm:px-10 lg:px-5 lg:w-[34rem] leading-6 md:leading-7 lg:leading-8 text-sm md:text-base text-slate-400 font-roboto_mono">
+        <div className="px-2 sm:px-10 lg:px-5 lg:w-[34rem] leading-6 md:leading-7 lg:leading-8 text-sm lg:text-base text-slate-400 font-roboto_mono">
           <h4 className=" mb-2">{data.category}</h4>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-200 mb-5">
             {data?.name}
