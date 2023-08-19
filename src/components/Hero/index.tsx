@@ -7,6 +7,7 @@ import { fadeIn, fadeUp, slideFromLeft } from '../../utils/Animations'
 import { BiChevronsDown } from 'react-icons/bi'
 import {PortableText} from '@portabletext/react'
 import { HeroData } from '../../utils/types'
+import { Button } from '../ui/button'
 
 type Props = {
   data: HeroData
@@ -50,9 +51,9 @@ function Hero({data}: Props) {
           </motion.div>
       </div>
       <motion.div variants={fadeIn} className='flex items-center justify-start '>
-        <button className='px-8 py-3 text-slate-200 hover:bg-teal-600 border-2 border-teal-400 rounded-3xl transition ease-in text-sm lg:text-base'>
+        <Button variant='secondary' className='text-slate-400 '>
           Get My Resume
-        </button>
+        </Button>
       </motion.div>
     </div>
     <div className=' text-slate-200 flex justify-center items-center w-full h-[20vh]'>
