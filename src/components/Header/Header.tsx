@@ -41,7 +41,7 @@ export default function Header({headerData}: Props) {
             </h1>
           </Link>
           <div className="flex">
-            <ul className="hidden lg:flex items-center text-slate-200 text-base">
+            <ul className="hidden lg:flex items-center text-slate-200 text-sm tracking-widest">
               {/* <li className=' cursor-pointer text-2xl pr-2' onClick={() => setDarkMode(!darkMode)}> */}
               {/* <div className='p-2 hover:bg-neutral-700 hover:text-slate-200 dark:hover:bg-slate-200 dark:hover:text-gray-900 transition ease-in rounded-xl'>
                       { darkMode ? <MdDarkMode/> : <MdLightMode/>}
@@ -55,7 +55,7 @@ export default function Header({headerData}: Props) {
                   smooth={true}
                   duration={50}
                 >
-                  Skills
+                  SKILLS
                 </ScrollLink>
               </li>
               <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
@@ -67,12 +67,12 @@ export default function Header({headerData}: Props) {
                   duration={50}
                   offset={-200}
                 >
-                  Projects
+                  PROJECTS
                 </ScrollLink>
               </li>
               <Link href="/blog">
                 <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
-                  Blogs
+                  BLOG
                 </li>
               </Link>
               <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
@@ -83,7 +83,7 @@ export default function Header({headerData}: Props) {
                   smooth={true}
                   duration={50}
                 >
-                  Contact
+                  CONTACT
                 </ScrollLink>
               </li>
             </ul>
