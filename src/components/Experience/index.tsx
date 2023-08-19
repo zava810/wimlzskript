@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { slideFromLeft } from "../../utils/Animations";
+import { slideFromLeft, slideFromRight } from "../../utils/Animations";
 import { MdLocationOn } from "react-icons/md";
 import { PortableText } from "@portabletext/react";
 import { ExperienceData } from "../../utils/types";
@@ -58,7 +58,7 @@ export function ExperienceDropDown({ experienceData }) {
   });
 
   return (
-    <>
+    <motion.div  variants={slideFromRight}>
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>
@@ -100,6 +100,6 @@ export function ExperienceDropDown({ experienceData }) {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </>
+    </motion.div>
   );
 }
