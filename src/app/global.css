@@ -218,3 +218,14 @@ animation: scroll-bounce 6s ease infinite;
 .width-prop {
  max-width: 300px !important;
 }
+
+.close-icon {
+  animation: rotate .55s ease-in-out;
+}
+
+@keyframes rotate {
+  0% {rotate: 0deg;}
+  50% {rotate: -90deg;}
+  100% {rotate: -180deg}
+
+}

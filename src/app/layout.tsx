@@ -3,6 +3,8 @@ import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import { Roboto_Mono, Roboto } from '@next/font/google'
 import './global.css'
+import { getDataFromSanity } from '../../sanity/sanity-utils';
+import { HeroData } from '../utils/types';
 
 
 const robotoMono = Roboto_Mono(
@@ -18,14 +20,19 @@ const robotoMono = Roboto_Mono(
   }
   )
 
-export default function RootLayout(props : {children: React.ReactNode, modal: React.ReactNode}) {
-  
+  async function getData() {
+    const data:HeroData = await getDataFromSanity('Hero', false);
+    return data[0];
+  }
+
+export default async function RootLayout(props : {children: React.ReactNode, modal: React.ReactNode}) {
+  const headerData = await getData(); 
     return (
       <html lang="en">
         <body className={`${robotoMono.variable} ${roboto.variable} font-sans`}>
             <main>
                 <div className="pb-5 px-2 min-h-screen bg-primary font-roboto_mono">
-                    <Header />
+                    <Header headerData={headerData} />
                         <div className='min-h-[90vh] pt-16'>
                         {props.children}
                         {props.modal}

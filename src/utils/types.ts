@@ -7,14 +7,17 @@ interface SanityBase  {
 
 export interface HeroData extends SanityBase {
     _type: 'Hero',
-    destination: string,
+    designation: string,
     organization: string,
     companyUrl: string,
     resume: {
         asset: any,
         _type: 'file'
     },
-    content: any
+    content: any,
+    headerDescription: any,
+    avatarImage: any
+
 }
 
 export interface AboutData extends SanityBase {
