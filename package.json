@@ -11,14 +11,23 @@
   "dependencies": {
     "@next/font": "13.1.1",
     "@portabletext/react": "^3.0.4",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-avatar": "^1.0.3",
+    "@radix-ui/react-dialog": "^1.0.4",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.14.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
     "eslint": "8.31.0",
-    "eslint-config-next": "13.1.1",
-    "framer-motion": "^10.11.2",
-    "next": "13.1.1",
+    "eslint-config-next": "^13.4.12",
+    "framer-motion": "^10.15.0",
+    "keen-slider": "^6.8.6",
+    "lucide-react": "^0.265.0",
+    "next": "^13.4.12",
     "next-sanity": "^4.1.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-scroll": "^1.8.9",
     "react-simple-typewriter": "^5.0.1",
@@ -26,12 +35,14 @@
     "react-tsparticles": "^2.9.3",
     "sanity": "^3.14.1",
     "styled-components": "^5.3.9",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.6",
     "tsparticles": "^2.9.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4",
-    "typescript": "5.0.4"
+    "typescript": "^5.1.6"
   }
 }

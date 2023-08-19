@@ -4,8 +4,8 @@ const heroSchema = {
     type: 'document',
     fields: [
         {
-            name: 'destination',
-            title: 'Destination',
+            name: 'designation',
+            title: 'Designation',
             type: 'string'
         },
         {
@@ -28,6 +28,25 @@ const heroSchema = {
             name: 'resume',
             title: 'resume',
             type: 'file'
+        },
+        {
+            name: 'headerDescription',
+            title: 'Header Description',
+            type: 'array',
+            of: [{type: 'block'}]
+        },
+        {
+            name: 'avatarImage',
+            title: 'Avatar Image',
+            type: 'image',
+            options: {hotspot: true},
+            fields: [
+                {
+                    name: 'alt',
+                    title: 'Alt',
+                    type: 'string'
+                }
+            ]
         }
     ]
     
