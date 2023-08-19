@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { fadeIn, slideFromLeft, slideFromRight } from '../../utils/Animations'
+import { Button } from '../ui/button'
 
 type Props = {}
 
@@ -19,7 +20,7 @@ function Contact({}: Props) {
         Feel free to connect with me and view my professional profile for more information about my background and experience.
       </motion.p>
       <motion.div variants={fadeIn} className='flex items-center justify-start'>
-        <button className='px-8 py-3 dark:text-slate-200 hover:bg-teal-500 border-2 border-teal-500 rounded-3xl transition ease-in' onClick={() => sendMail()}>Contact Me</button>
+        <Button variant='secondary' className='dark:text-slate-400' onClick={() => sendMail()}>Contact Me</Button>
       </motion.div>
     </motion.div>
   </section>
