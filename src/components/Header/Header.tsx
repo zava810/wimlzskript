@@ -10,11 +10,20 @@ import {
 } from "react-icons/ai";
 import { useState } from "react";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
-import { slideDown } from "../../utils/Animations";
 import { Link as ScrollLink } from "react-scroll";
+import { Sheet, SheetContent } from "../ui/sheet";
+import { Separator } from "../ui/seperator";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { getDataFromSanity } from "../../../sanity/sanity-utils";
+import { HeroData } from "../../utils/types";
+import { PortableText } from "@portabletext/react";
+import { urlFor } from "../../../sanity/sanity-utils";
 
-export default function Header() {
+type Props = {
+  headerData: HeroData
+}
+
+export default function Header({headerData}: Props) {
   const [darkMode, setDarkMode] = useState(true);
   const [hamMenu, setHamMenu] = useState(false);
   return (
@@ -82,11 +91,11 @@ export default function Header() {
               className="text-slate-200 flex-col justify-center items-center cursor-pointer text-2xl flex lg:hidden"
               onClick={() => setHamMenu(!hamMenu)}
             >
-              {hamMenu ? <AiOutlineClose /> : <GiHamburgerMenu />}
+              {!hamMenu && <GiHamburgerMenu />}
             </div>
           </div>
         </nav>
-        <AnimatePresence>
+        {/* <AnimatePresence>
           {hamMenu && (
             <div className="overflow-hidden lg:hidden">
               <motion.div
@@ -157,8 +166,108 @@ export default function Header() {
               </motion.div>
             </div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
+        <HamburgerSlideMenu hamMenu={hamMenu} setHamMenu={setHamMenu} headerData={headerData} />
       </header>
     </>
   );
+}
+
+type HamProps = {
+  hamMenu: any,
+  setHamMenu: any,
+  headerData: HeroData
+}
+
+export function HamburgerSlideMenu({hamMenu, setHamMenu, headerData}: HamProps) {  
+  
+  return (
+    <>
+      <Sheet open={hamMenu} onOpenChange={()=> setHamMenu(!hamMenu)} >
+        <SheetContent className="font-roboto_mono text-slate-200 lg:hidden">
+        <div className="overflow-hidden lg:hidden">
+              <div className="flex flex-col justify-between w-full h-[94vh] bg-primary">
+                <div className="flex flex-col">
+                  <div className="flex flex-col p-5 text-sm">
+                    <div className="flex items-center mb-4">
+                      <Avatar>
+                        <AvatarImage src={urlFor(headerData.avatarImage).url()}/>
+                        <AvatarFallback>VS</AvatarFallback>
+                      </Avatar>
+                      <h3 className="ml-4 text-xl">Vishnu Surendran</h3>
+                    </div>
+                    <div>
+                      <PortableText value={headerData.headerDescription}/> 
+                    </div>
+                    <Separator className="mt-5"/>
+                  </div>
+                  <div>
+                    <ul className="flex items-center text-left flex-col p-5 text-base text-slate-200">
+                      <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
+                        <ScrollLink
+                          className="w-full block"
+                          activeClass="active"
+                          to="skills"
+                          spy={true}
+                          smooth={true}
+                          duration={50}
+                          onClick={() => setHamMenu(!hamMenu)}
+                        >
+                          SKILLS
+                        </ScrollLink>
+                      </li>
+                      <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
+                        <ScrollLink
+                          className="w-full block"
+                          activeClass="active"
+                          to="projects"
+                          spy={true}
+                          smooth={true}
+                          duration={50}
+                          offset={-200}
+                          onClick={() => setHamMenu(!hamMenu)}
+                        >
+                          PROJECTS
+                        </ScrollLink>
+                      </li>
+                      <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
+                        <Link href="/blog">BLOG</Link>
+                      </li>
+                      <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
+                        <ScrollLink
+                          className="w-full block"
+                          activeClass="active"
+                          to="contact"
+                          spy={true}
+                          smooth={true}
+                          duration={50}
+                          onClick={() => setHamMenu(!hamMenu)}
+                        >
+                          CONTACT
+                        </ScrollLink>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center justify-center p-5">
+                  <Separator className="mb-5"/>
+                  <div className="mb-5 text-sm">Find me on</div>
+                  <div className="flex items-center justify-between w-full px-5 sm:px-10">
+                    <div className="">
+                      <AiFillLinkedin className="text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer" />
+                    </div>
+                    <div className="">
+                      <AiFillGithub className="text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer" />
+                    </div>
+                    <div className="">
+                      <AiOutlineInstagram className="text-slate-200 hover:text-teal-500 transition ease-in-out text-xl cursor-pointer" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </SheetContent>
+      </Sheet>
+    </>
+  )
 }

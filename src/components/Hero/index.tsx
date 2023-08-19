@@ -37,7 +37,7 @@ function Hero({data}: Props) {
           </h4>
         </motion.div>
         <motion.h4 variants={fadeIn} className='text-md md:text-xl lg:text-xl flex'>
-          <span className='text-secondary pr-2 whitespace-nowrap'>{data?.destination}</span> @ 
+          <span className='text-secondary pr-2 whitespace-nowrap'>{data?.designation}</span> @ 
           <a href={data?.companyUrl} target="_blank" rel="noreferrer">
             <p className='company-name pl-2 whitespace-nowrap'>
               {data?.organization}

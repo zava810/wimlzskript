@@ -1,13 +1,16 @@
 import { createClient } from "next-sanity";
+import imageUrlBuilder from '@sanity/image-url'
+
+
+const client = createClient({
+    projectId: 'h4sd5p60',
+    dataset: 'production',
+    apiVersion: '2023-04-10',
+    useCdn: false
+})
+const builder = imageUrlBuilder(client)
 
 export async function getDataFromSanity(type, imageExist, params?) {
-    const client = createClient({
-        projectId: 'h4sd5p60',
-        dataset: 'production',
-        apiVersion: '2023-04-10',
-        useCdn: false
-    })
-    // console.log(type, imageExist);
     const query = params ? (imageExist ? 
     `*[_type == '${type}' && slug.current == '${params}']
     {
@@ -60,3 +63,7 @@ export async function getSanityDataBySlug(type, slug) {
     const data = await client.fetch(query)
     return data;
 }
+
+export function urlFor(source) {
+    return builder.image(source)
+  }

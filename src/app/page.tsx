@@ -45,7 +45,7 @@ async function getData(type, containsImage) {
 
 
 export default async function Home() {
-  const heroData: HeroData = await getData('Hero', false);
+  const heroData: HeroData = await getData('Hero', true);
   const aboutData: AboutData = await getData('About', false);
   const experienceData: ExperienceData[] = await getData('Experience', false);
   const projectData: ProjectData[] = await getData('Projects', true);
