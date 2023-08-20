@@ -6,7 +6,8 @@ const client = createClient({
     projectId: 'h4sd5p60',
     dataset: 'production',
     apiVersion: '2023-04-10',
-    useCdn: false
+    useCdn: false,
+    token: process.env.NEXT_PUBLIC_SANITY_TOKEN
 })
 const builder = imageUrlBuilder(client)
 
@@ -67,3 +68,8 @@ export async function getSanityDataBySlug(type, slug) {
 export function urlFor(source) {
     return builder.image(source)
   }
+
+export async function updateViewCount(_id,) {
+    const result = await client.patch(_id).inc({viewCount: 1}).commit();
+    return result;
+}
