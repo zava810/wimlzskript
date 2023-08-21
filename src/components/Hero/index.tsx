@@ -25,25 +25,28 @@ function Hero({data}: Props) {
       <div className='mt-10 mb-8 dark:text-slate-200 leading-9'>
         {/* <h1 className='text-5xl font-medium pb-2'><span className='text-hover'>H</span><span className='text-hover'>i</span><span className='text-hover'>,</span></h1> */}
         <motion.h6 variants={slideFromLeft} className='text-secondary mb-4 text-sm lg:text-base font-roboto_mono'>Hey there, <span className='text-xl md:text-2xl hand-wave'>\uD83D\uDC4B\uD83C\uDFFB</span></motion.h6>
-        <motion.h3 variants={slideFromLeft} className='text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight font-roboto-mono mb-6 whitespace-nowrap'>
+        <motion.h3 variants={slideFromLeft} className='text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight font-roboto-mono mb-2 md:mb-5 whitespace-nowrap'>
         I&apos;m 
           <span className='text-secondary ml-6'>
             Vishnu Surendran
           </span>  
         </motion.h3>
         <motion.div variants={fadeIn} className='overflow-hidden'>
-          <h4 className='text-lg md:text-2xl lg:text-3xl font-medium tracking-tight font-roboto-mono mb-6 whitespace-nowrap'>
+          <h4 className='text-lg md:text-2xl lg:text-3xl font-medium tracking-tight font-roboto-mono mb-1 md:mb-5 whitespace-nowrap'>
             <span>{text}</span>
             <Cursor cursorColor='#14B8A6'/>
           </h4>
         </motion.div>
-        <motion.h4 variants={fadeIn} className='text-md md:text-xl lg:text-xl flex'>
-          <span className='text-secondary pr-2 whitespace-nowrap'>{data?.designation}</span> @ 
-          <a href={data?.companyUrl} target="_blank" rel="noreferrer">
-            <p className='company-name pl-2 whitespace-nowrap'>
-              {data?.organization}
-            </p>
-          </a>
+        <motion.h4 variants={fadeIn} className='text-md md:text-xl lg:text-xl flex flex-wrap leading-6 mb-1 md:mb-2'>
+          <span className='text-secondary pr-2 whitespace-nowrap'>{data?.designation}</span>
+          <span className='flex'>
+            @
+            <a href={data?.companyUrl} target="_blank" rel="noreferrer">
+              <p className='company-name pl-2 whitespace-nowrap'>
+                {data?.organization}
+              </p>
+            </a>
+          </span>  
         </motion.h4>
         {/* <p className=' text-secondary mb-3 text-sm lg:text-base'>Front-end Developer | Electronics Enthusiast</p> */}
         <motion.div variants={fadeIn} className=' leading-6 md:leading-7 lg:leading-8 text-slate-400 text-sm lg:text-base'>
