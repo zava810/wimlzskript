@@ -65,9 +65,9 @@ export default function Footer() {
             />
           </div>
         </div>
-        {viewCount ? <p className="font-light text-slate-400 text-xs">
+        {/* {viewCount ? <p className="font-light text-slate-400 text-xs">
           {viewCount} Views 
-        </p> : <Skeleton className="w-[60px] h-[16px] rounded-sm" />}
+        </p> : <Skeleton className="w-[60px] h-[16px] rounded-sm" />} */}
         <p className="italic font-light text-slate-400 text-xs">
           Designed & Developed by Vishnu Surendran
         </p>
