@@ -19,7 +19,7 @@ function Projects({data}: Props) {
     <div className='flex'>
       <motion.h2 variants={slideFromLeft} className=' dark:text-slate-200 text-2xl mb-10' id='projects'>Things I&apos;ve Built</motion.h2>
     </div>
-    <motion.div className='lg:flex flex-wrap lg:flex-nowrap lg:grid-cols-3 py-3 px-0 gap-6 justify-center hidden lg:visible'>
+    <motion.div className='lg:flex flex-wrap lg:flex-nowrap lg:grid-cols-3 py-3 px-0 gap-6 justify-start hidden lg:visible'>
       {data?.map((project) => {
         return (
         <motion.div variants={fadeUp} key={project._id} className=' custom-shadow rounded-xl project-tile flex flex-col items-center text-slate-200  box-border overflow-hidden bg-lightNavy min-w-[18rem] max-w-md lg:max-w-[22rem]'>
