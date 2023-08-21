@@ -109,6 +109,15 @@ animation: scroll-bounce 6s ease infinite;
   transform: scale(1);
   transition: .3s; 
 }
+.project-tile {
+  transform: translateY(0px) !important;
+  transition: .3s;
+}
+
+.project-tile:hover {
+  transform: translateY(-10px) !important;
+  transition: .3s;
+}
 
 .project-tile:hover .project-img {
   transform: scale(1.1);
