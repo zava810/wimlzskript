@@ -30,9 +30,9 @@ export default function ProjectSlider ({data}) {
      <div className="navigation-wrapper w-full">
         <div ref={sliderRef} className="keen-slider overflow-visible">
           {data.map((project) => (
-            <div key={project._id} className='width-prop keen-slider__slide custom-shadow rounded-xl project-tile flex flex-col items-center text-slate-200  box-border overflow-hidden bg-lightNavy min-w-[18rem] max-w-[18rem] lg:max-w-[22rem]'>
+            <div key={project._id} className='width-prop keen-slider__slide custom-shadow rounded-xl flex flex-col items-center text-slate-200  box-border overflow-hidden bg-lightNavy min-w-[18rem] max-w-[18rem] lg:max-w-[22rem]'>
             <div className=' overflow-hidden w-full '>
-                <Image src={project.image.asset?.url} alt="instagramClone" width={400} height={400} className='w-full object-cover scale-100 hover:scale-110 duration-300 h-[280px] sm:h-[380px] md:h-[320px]'/>
+                <Image src={project.image.asset?.url} alt="instagramClone" width={400} height={400} className='w-full object-cover scale-100 hover:scale-110 duration-300 h-[280px] sm:h-[380px] md:h-[280px]'/>
             </div>
             <div className='flex flex-col w-full justify-start py-4 px-6'>
               <h4 className='py-1 leading-6 md:leading-7 lg:leading-8 text-base md:text-lg'>{project.name}</h4>
