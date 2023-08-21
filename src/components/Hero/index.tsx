@@ -8,6 +8,7 @@ import { BiChevronsDown } from 'react-icons/bi'
 import {PortableText} from '@portabletext/react'
 import { HeroData } from '../../utils/types'
 import { Button } from '../ui/button'
+import Link from 'next/link'
 
 type Props = {
   data: HeroData
@@ -54,9 +55,11 @@ function Hero({data}: Props) {
           </motion.div>
       </div>
       <motion.div variants={fadeIn} className='flex items-center justify-start '>
-        <Button variant='secondary' className='text-slate-400 '>
-          Get My Resume
-        </Button>
+        <Link href={`${data.resume?.asset.url}?dl=`}  target='_blank'>
+          <Button variant='secondary' className='text-slate-400 '>
+            Get My Resume
+          </Button>
+        </Link>
       </motion.div>
     </div>
     <div className=' text-slate-200 flex justify-center items-center w-full h-[20vh]'>

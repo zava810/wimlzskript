@@ -2,7 +2,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '../ui/dialog';
 import { Button } from '../ui/button';
 import { ProjectData } from '../../utils/types';
-import { getDataFromSanity } from '../../../sanity/sanity-utils';
+import { getDataFromSanity, urlFor } from '../../../sanity/sanity-utils';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image'
@@ -23,7 +23,7 @@ export default  function ProjectModal ({data}) {
             <DialogContent>
               <div className='flex flex-col lg:flex-row grid-cols-2 justify-center max-h-[90vh] lg:max-h-[80vh] md:min-h-[45vh] w-full'>
                 <div className='px-2 sm:px-10 lg:px-5 my-5 flex justify-center items-center w-full lg:max-w-lg'>
-                  <Image src={data.image.asset?.url} alt="project-image" width={470} height={380} className='rounded-xl w-full object-cover h-auto lg:h-[380px]'/>
+                  <Image src={urlFor(data.image).url()} alt="project-image" width={470} height={380} className='rounded-xl w-full object-cover h-auto lg:h-[380px]'/>
                 </div>
                 <div className='px-2 sm:px-10 lg:px-5 lg:w-[34rem] leading-6 md:leading-7 lg:leading-8 text-sm lg:text-base text-slate-400 font-roboto_mono'>
                   <h4 className=' mb-2'>{data.category}</h4>

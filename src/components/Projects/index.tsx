@@ -7,6 +7,7 @@ import { fadeUp, slideFromLeft } from '../../utils/Animations'
 import { ProjectData } from '../../utils/types';
 import Link from 'next/link';
 import ProjectSlider from '../ProjectSlider'
+import { urlFor } from '../../../sanity/sanity-utils'
 
 type Props = {
   data: ProjectData[]
@@ -24,7 +25,7 @@ function Projects({data}: Props) {
         return (
         <motion.div variants={fadeUp} key={project._id} className=' custom-shadow rounded-xl project-tile flex flex-col items-center text-slate-200  box-border overflow-hidden bg-lightNavy min-w-[18rem] max-w-md lg:max-w-[22rem]'>
           <div className=' overflow-hidden aspect-video'>
-            <Image src={project.image.asset?.url} alt="instagramClone" width={400} height={400} className='project-img'/>
+            <Image src={urlFor(project.image).url()} alt="instagramClone" width={400} height={400} className='project-img'/>
           </div>
           <div className='flex flex-col w-full justify-start pt-4 pb-3 px-6'>
             <h4 className='leading-6 md:leading-7 lg:leading-8 text-base md:text-lg'>{project.name}</h4>
