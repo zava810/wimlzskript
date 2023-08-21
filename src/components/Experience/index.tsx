@@ -63,7 +63,7 @@ export function ExperienceDropDown({ experienceData }) {
         <AccordionItem value="item-1">
           <AccordionTrigger>
             <div className="flex flex-col items-start font-roboto_mono text-slate-200">
-              <h4 className=" dark:text-slate-200 text-base text-left md:text-lg">
+              <h4 className=" dark:text-slate-400 text-base text-left md:text-lg">
                 {experienceData?.designation} @ {experienceData?.company}
               </h4>
               <p className="text-slate-400 italic text-xs md:text-sm pt-2 mb-3">{`${formattedStartDate} - ${
@@ -73,7 +73,7 @@ export function ExperienceDropDown({ experienceData }) {
           </AccordionTrigger>
           <AccordionContent>
             <div className="overflow-hidden">
-              <div className="rounded-xl p-2 dark:bg-slate-800 bg-[#E5E7E9] flex flex-col">
+              <div className="rounded-xl p-2  bg-lightNavy flex flex-col">
                 <div className="flex items-center dark: text-slate-400 my-2">
                   <span className="px-2 text-teal-500">
                     <MdLocationOn />
@@ -88,7 +88,7 @@ export function ExperienceDropDown({ experienceData }) {
                     {experienceData?.skills?.map((skill, j) => (
                       <li
                         key={j}
-                        className="px-4 py-1 mx-2 rounded-3xl dark:bg-neutral-900 bg-[#2A3A45] text-secondary whitespace-nowrap"
+                        className="px-4 py-1 mx-2 rounded-3xl  bg-primary text-secondary whitespace-nowrap"
                       >
                         {skill}
                       </li>
