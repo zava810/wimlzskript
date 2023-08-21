@@ -31,15 +31,6 @@ export const metadata: Metadata = {
 
 async function getData(type, containsImage) {
   const data = await getDataFromSanity(type, containsImage);
-  if (type === 'About') {
-    const skillArr = data[0].skills?.reduce((acc, curr, i) => {
-        if (!(i%3)) {
-            acc.push(data[0].skills.slice(i, i+3));
-          }
-          return acc;
-        }, []);
-    data[0].skillsArr = skillArr; 
-  }
   return data;
 }
 
