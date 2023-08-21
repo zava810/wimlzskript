@@ -29,17 +29,17 @@ export const metadata: Metadata = {
   description: 'Personal portfolio'
 }
 
-async function getData(type, containsImage) {
-  const data = await getDataFromSanity(type, containsImage);
+async function getData(type, containsImage, fileName?) {
+  const data = await getDataFromSanity(type, containsImage, false, fileName);
   return data;
 }
 
 
 export default async function Home() {
-  const heroData: HeroData = await getData('Hero', true);
+  const heroData: HeroData = await getData('Hero', true, 'resume');
   const aboutData: AboutData = await getData('About', false);
   const experienceData: ExperienceData[] = await getData('Experience', false);
-  const projectData: ProjectData[] = await getData('Projects', true);
+  const projectData: ProjectData[] = await getData('Projects', false);
   
 
   return (
