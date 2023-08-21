@@ -22,20 +22,16 @@ function About({data}: Props) {
       <motion.p variants={slideFromRight} className='dark:text-slate-400 py-4' id='skills'>
         Here are few technologies I&apos;ve been working with recently:
       </motion.p>
-      <motion.div className='flex justify-start dark:text-slate-400 leading-9 px-5'>
-        {data?.skillsArr?.length && data?.skillsArr?.map((skillArr, i) => {
-          return (
-            <motion.ul key={i} className={`${i !== 0 ? 'ml-10' : '' } list-circle`}>
-            {
-              skillArr.map((skill, j) => {
-                return (
-                  <motion.li key={j} variants={slideFromRight} className='text-teal-500 whitespace-nowrap'> <span className='text-slate-400'>{skill}</span></motion.li>
-                  )
-              })
-            }
-          </motion.ul>
-        )
-        })}
+      <motion.div className='grid grid-cols-2 sm:grid-cols-3 justify-start dark:text-slate-400 leading-9 sm:w-3/4 md:w-3/5'>
+        {
+          data.skills.map((skill, i) => (
+            <motion.li variants={slideFromRight} className='list-circle text-secondary' key={i}>
+              <span className='text-slate-400'>
+                {skill}  
+              </span>
+            </motion.li>
+          ))
+        }
         </motion.div>
     </motion.div>
   </section>

@@ -24,7 +24,6 @@ export interface AboutData extends SanityBase {
     _type: 'About',
     aboutContent: any,
     skills: [],
-    skillsArr: [[]]
 }
 
 export interface ExperienceData extends SanityBase {
