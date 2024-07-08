@@ -11,12 +11,12 @@ const client = createClient({
 })
 const builder = imageUrlBuilder(client)
 
-export async function getDataFromSanity(type, imageExist, params?) {
-    const query = params ? (imageExist ? 
+export async function getDataFromSanity(type, urlExist, params?, fileName?) {
+    const query = params ? (urlExist ? 
     `*[_type == '${type}' && slug.current == '${params}']
     {
     ...,
-    image {
+    ${fileName} {
         asset-> {
             _id,
             url
@@ -25,11 +25,11 @@ export async function getDataFromSanity(type, imageExist, params?) {
     }` : 
     `*[_type == '${type}' && slug.current == '${params}']{
         ...,
-}   `)  : (imageExist ? 
+}   `)  : (urlExist ? 
     `*[_type == '${type}']
     {
     ...,
-    image {
+    ${fileName} {
         asset-> {
             _id,
             url

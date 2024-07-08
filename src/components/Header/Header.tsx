@@ -10,7 +10,6 @@ import {
 } from "react-icons/ai";
 import { useState } from "react";
 import Link from "next/link";
-import { Link as ScrollLink } from "react-scroll";
 import { Sheet, SheetContent } from "../ui/sheet";
 import { Separator } from "../ui/seperator";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -18,6 +17,7 @@ import { getDataFromSanity } from "../../../sanity/sanity-utils";
 import { HeroData } from "../../utils/types";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "../../../sanity/sanity-utils";
+import BlurFade from "../magicui/blur-fade";
 
 type Props = {
   headerData: HeroData
@@ -47,45 +47,34 @@ export default function Header({headerData}: Props) {
                       { darkMode ? <MdDarkMode/> : <MdLightMode/>}
                     </div> */}
               {/* </li> */}
+              <BlurFade delay={0.25} yOffset={0} >
               <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
-                <ScrollLink
-                  activeClass="active"
-                  to="skills"
-                  spy={true}
-                  smooth={true}
-                  duration={50}
-                >
+                <Link href={'/#skills'}>
                   SKILLS
-                </ScrollLink>
+                </Link>
               </li>
+              </BlurFade>
+              <BlurFade delay={0.25 * 2} yOffset={0} >
               <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
-                <ScrollLink
-                  activeClass="active"
-                  to="projects"
-                  spy={true}
-                  smooth={true}
-                  duration={50}
-                  offset={-200}
-                >
+                <Link href={"/#projects"}>
                   PROJECTS
-                </ScrollLink>
+                </Link>
               </li>
+              </BlurFade>
+              <BlurFade delay={0.25 * 3} yOffset={0} >
               <Link href="/blog">
                 <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
                   BLOG
                 </li>
               </Link>
+              </BlurFade>
+              <BlurFade delay={0.25 * 4} yOffset={0} >
               <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
-                <ScrollLink
-                  activeClass="active"
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  duration={50}
-                >
+                <Link href={"/#contact"}>
                   CONTACT
-                </ScrollLink>
+                </Link>
               </li>
+              </BlurFade>
             </ul>
             <div
               className="text-slate-200 flex-col justify-center items-center cursor-pointer text-2xl flex lg:hidden"
@@ -204,47 +193,24 @@ export function HamburgerSlideMenu({hamMenu, setHamMenu, headerData}: HamProps) 
                   <div>
                     <ul className="flex items-center text-left flex-col p-5 text-base text-slate-200">
                       <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
-                        <ScrollLink
-                          className="w-full block"
-                          activeClass="active"
-                          to="skills"
-                          spy={true}
-                          smooth={true}
-                          duration={50}
-                          onClick={() => setHamMenu(!hamMenu)}
-                        >
+                        <Link className="w-full block" href={"/#skills"} onClick={() => setHamMenu(!hamMenu)}>
                           SKILLS
-                        </ScrollLink>
+                        </Link>
                       </li>
                       <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
-                        <ScrollLink
-                          className="w-full block"
-                          activeClass="active"
-                          to="projects"
-                          spy={true}
-                          smooth={true}
-                          duration={50}
-                          offset={-200}
-                          onClick={() => setHamMenu(!hamMenu)}
-                        >
+                        <Link
+                          className="w-full block" href={"/#projects"} onClick={() => setHamMenu(!hamMenu)}>
                           PROJECTS
-                        </ScrollLink>
+                        </Link>
                       </li>
                       <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
                         <Link href="/blog">BLOG</Link>
                       </li>
                       <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
-                        <ScrollLink
-                          className="w-full block"
-                          activeClass="active"
-                          to="contact"
-                          spy={true}
-                          smooth={true}
-                          duration={50}
-                          onClick={() => setHamMenu(!hamMenu)}
-                        >
+                        <Link
+                          className="w-full block" href={"/#contact"} onClick={() => setHamMenu(!hamMenu)}>
                           CONTACT
-                        </ScrollLink>
+                        </Link>
                       </li>
                     </ul>
                   </div>

@@ -21,6 +21,12 @@ module.exports = {
         roboto_mono: ['var(--font-roboto-mono)', ...fontFamily.sans],
         roboto: ['var(--font-roboto)', ...fontFamily.sans]
       },
+      animation: {
+        "accordion-down": "accordion-down 0.3s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "animate-in": "animate-in 0.2s ease-in",
+        "animate-out": "animate-out 0.3s ease-out",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -37,13 +43,7 @@ module.exports = {
         "animate-out": {
           from: { opacity: 1 },
           to: { opacity:0 }
-        }
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.3s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "animate-in": "animate-in 0.2s ease-in",
-        "animate-out": "animate-out 0.3s ease-out",
+        },
       },
     },
     listStyleType: {

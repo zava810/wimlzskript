@@ -2,7 +2,7 @@ import { PortableText } from "@portabletext/react";
 import React from "react";
 import Image from "next/image";
 import { Button } from "../../../components/ui/button";
-import { getDataFromSanity } from "../../../../sanity/sanity-utils";
+import { getDataFromSanity, urlFor } from "../../../../sanity/sanity-utils";
 import { ProjectData } from "../../../utils/types";
 
 async function getData(params) {
@@ -17,7 +17,7 @@ export default async function ProjectPage({ params: { id } }: { params: { id: st
       <div className="p-10 flex flex-col lg:flex-row grid-cols-2 justify-center items-center min-h-[80vh] w-full">
         <div className="px-2 sm:px-10 lg:px-5 my-5 flex justify-center items-center w-full lg:max-w-lg">
           <Image
-            src={data.image.asset?.url}
+            src={urlFor(data.image).url()}
             alt="project-image"
             width={470}
             height={380}
