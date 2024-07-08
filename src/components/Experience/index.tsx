@@ -12,6 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
+import BlurFade from "../magicui/blur-fade";
 
 type Props = {
   data: ExperienceData[];
@@ -20,25 +21,18 @@ type Props = {
 function Experience({ data }: Props) {
   return (
     <section className="flex flex-col py-10 px-5">
-      <motion.div
-        className="flex flex-col justify-start"
-        initial={"initial"}
-        whileInView={"animate"}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ staggerChildren: 0.2 }}
-      >
-        <motion.h2
-          variants={slideFromLeft}
-          className="dark:text-slate-200 text-2xl mb-10"
-        >
-          Where I&apos;ve Worked
-        </motion.h2>
-        {data &&
-          data.length &&
-          data?.map((item, i) => (
-            <ExperienceDropDown key={i} experienceData={item} />
-          ))}
-      </motion.div>
+      <div className="flex flex-col justify-start">
+        <BlurFade delay={0.25} inView>
+          <h2 className="dark:text-slate-200 text-2xl mb-10">
+            Where I&apos;ve Worked
+          </h2>
+        </BlurFade>
+        {data && data.length && data?.map((item, i) => (
+          <BlurFade key={i} delay={0.25 * (i + 2)} inView>
+            <ExperienceDropDown experienceData={item} />
+          </BlurFade>
+        ))}
+      </div>
     </section>
   );
 }
@@ -58,17 +52,15 @@ export function ExperienceDropDown({ experienceData }) {
   });
 
   return (
-    <motion.div  variants={slideFromRight}>
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
-          <AccordionTrigger>
+          <AccordionTrigger className="px-4">
             <div className="flex flex-col items-start font-roboto_mono text-slate-200">
               <h4 className=" dark:text-slate-400 text-base text-left md:text-lg">
                 {experienceData?.designation} @ {experienceData?.company}
               </h4>
-              <p className="text-slate-400 italic text-xs md:text-sm pt-2 mb-3">{`${formattedStartDate} - ${
-                experienceData.present ? "Present" : formattedEndDate
-              }`}</p>
+              <p className="text-slate-400 italic text-xs md:text-sm pt-2 mb-3">{`${formattedStartDate} - ${experienceData.present ? "Present" : formattedEndDate
+                }`}</p>
             </div>
           </AccordionTrigger>
           <AccordionContent>
@@ -100,6 +92,5 @@ export function ExperienceDropDown({ experienceData }) {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </motion.div>
   );
 }

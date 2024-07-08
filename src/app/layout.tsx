@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
-import { Roboto_Mono, Roboto } from '@next/font/google'
+import { Roboto_Mono, Roboto } from 'next/font/google'
 import './global.css'
 import { getDataFromSanity } from '../../sanity/sanity-utils';
 import { HeroData } from '../utils/types';
+import DotPattern from '../components/magicui/dot-pattern';
 
 
 const robotoMono = Roboto_Mono(
@@ -34,6 +35,12 @@ export default async function RootLayout(props : {children: React.ReactNode, mod
                 <div className="pb-5 px-2 min-h-screen bg-primary font-roboto_mono">
                     <Header headerData={headerData} />
                         <div className='min-h-[90vh] pt-16'>
+                        <DotPattern 
+                                className="fixed inset-0"
+                                quantity={200}
+                                ease={30}
+                                color='#14b8a6'
+                                refresh/>
                         {props.children}
                         {props.modal}
                         </div>
