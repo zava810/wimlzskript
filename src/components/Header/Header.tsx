@@ -10,7 +10,6 @@ import {
 } from "react-icons/ai";
 import { useState } from "react";
 import Link from "next/link";
-import { Link as ScrollLink } from "react-scroll";
 import { Sheet, SheetContent } from "../ui/sheet";
 import { Separator } from "../ui/seperator";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -199,19 +198,19 @@ export function HamburgerSlideMenu({hamMenu, setHamMenu, headerData}: HamProps) 
                         </Link>
                       </li>
                       <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
-                        <ScrollLink
+                        <Link
                           className="w-full block" href={"/#projects"} onClick={() => setHamMenu(!hamMenu)}>
                           PROJECTS
-                        </ScrollLink>
+                        </Link>
                       </li>
                       <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
                         <Link href="/blog">BLOG</Link>
                       </li>
                       <li className="mx-auto py-5 cursor-pointer hover:text-teal-500 transition ease-in w-full">
-                        <ScrollLink
+                        <Link
                           className="w-full block" href={"/#contact"} onClick={() => setHamMenu(!hamMenu)}>
                           CONTACT
-                        </ScrollLink>
+                        </Link>
                       </li>
                     </ul>
                   </div>
