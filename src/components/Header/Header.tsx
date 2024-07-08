@@ -18,6 +18,7 @@ import { getDataFromSanity } from "../../../sanity/sanity-utils";
 import { HeroData } from "../../utils/types";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "../../../sanity/sanity-utils";
+import BlurFade from "../magicui/blur-fade";
 
 type Props = {
   headerData: HeroData
@@ -47,6 +48,7 @@ export default function Header({headerData}: Props) {
                       { darkMode ? <MdDarkMode/> : <MdLightMode/>}
                     </div> */}
               {/* </li> */}
+              <BlurFade delay={0.25} >
               <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
                 <ScrollLink
                   activeClass="active"
@@ -58,6 +60,8 @@ export default function Header({headerData}: Props) {
                   SKILLS
                 </ScrollLink>
               </li>
+              </BlurFade>
+              <BlurFade delay={0.25 * 2}>
               <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
                 <ScrollLink
                   activeClass="active"
@@ -70,11 +74,15 @@ export default function Header({headerData}: Props) {
                   PROJECTS
                 </ScrollLink>
               </li>
+              </BlurFade>
+              <BlurFade delay={0.25 * 3} >
               <Link href="/blog">
                 <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
                   BLOG
                 </li>
               </Link>
+              </BlurFade>
+              <BlurFade delay={0.25 * 4}>
               <li className="nav-items mx-10 cursor-pointer hover:text-teal-500 transition ease-in hidden lg:flex">
                 <ScrollLink
                   activeClass="active"
@@ -86,6 +94,7 @@ export default function Header({headerData}: Props) {
                   CONTACT
                 </ScrollLink>
               </li>
+              </BlurFade>
             </ul>
             <div
               className="text-slate-200 flex-col justify-center items-center cursor-pointer text-2xl flex lg:hidden"
