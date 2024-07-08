@@ -28,7 +28,7 @@ function About({ data }: Props) {
             Here are few technologies I&apos;ve been working with recently:
           </p>
         </BlurFade>
-        <div className="flex justify-between flex-col md:flex-row">
+        <div className="flex justify-between flex-col md:flex-row" id='skills'>
           <BlurFade delay={0.25 * 4} inView  className="w-full md:w-3/5">
             <div className='grid grid-cols-2 sm:grid-cols-3 justify-start dark:text-slate-400 leading-9 w-full'>
               {

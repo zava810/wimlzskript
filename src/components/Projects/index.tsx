@@ -15,7 +15,7 @@ type Props = {
 function Projects({ data }: Props) {
 
   return (
-    <section className='flex flex-col py-10 px-5'>
+    <section className='flex flex-col py-10 px-5' id='projects'>
       <BlurFade delay={0.25} inView>
         <div className='flex'>
           <h2 className=' dark:text-slate-200 text-2xl mb-10' id='projects'>Things I&apos;ve Built</h2>

@@ -10,7 +10,7 @@ function Contact({ }: Props) {
     window.location.href = "mailto:vishnuksvichu12345@gmail.com"
   }
   return (
-    <section className='flex flex-col px-5 py-10 mb-10 box'>
+    <section className='flex flex-col px-5 py-10 mb-10 box' id='contact'>
       <div className='flex flex-col justify-center'>
         <BlurFade delay={0.25} inView>
           <h2 className='dark:text-slate-200 text-2xl mb-10' id='contact'>Get In Touch</h2>
