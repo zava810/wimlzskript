@@ -25,7 +25,7 @@ function Projects({ data }: Props) {
         {data?.map((project, i) => {
           return (
             <BlurFade key={project._id} delay={0.25 * (i + 2)} inView>
-              <div className=' custom-shadow rounded-xl project-tile flex flex-col items-center text-slate-200  box-border overflow-hidden bg-lightNavy min-w-[18rem] max-w-md lg:max-w-[22rem]'>
+              <div className=' custom-shadow rounded-xl project-tile h-full flex flex-col items-center text-slate-200  box-border overflow-hidden bg-lightNavy min-w-[18rem] max-w-md lg:max-w-[22rem]'>
                 <div className=' overflow-hidden aspect-video'>
                   <Image src={urlFor(project.image).url()} alt="instagramClone" width={400} height={400} className='project-img' />
                 </div>
