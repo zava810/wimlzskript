@@ -26,17 +26,17 @@ function Projects({ data }: Props) {
           return (
             <BlurFade key={project._id} delay={0.25 * (i + 2)} inView>
               <div className=' custom-shadow rounded-xl project-tile h-full flex flex-col items-center text-slate-200  box-border overflow-hidden bg-lightNavy min-w-[18rem] max-w-md lg:max-w-[22rem]'>
-                <div className=' overflow-hidden aspect-video'>
+                <div className=' overflow-hidden aspect-video h-[60%]'>
                   <Image src={urlFor(project.image).url()} alt="instagramClone" width={400} height={400} className='project-img' />
                 </div>
-                <div className='flex flex-col w-full justify-start pt-4 pb-3 px-6'>
-                  <h4 className='leading-6 md:leading-7 lg:leading-8 text-base md:text-lg'>{project.name}</h4>
+                <div className='flex flex-col w-full justify-start pt-4 pb-3 px-6 h-[40%]'>
+                  <h4 className='leading-6 md:leading-7 lg:leading-8 text-base md:text-lg mb-auto'>{project.name}</h4>
                   <p className='subtext text-slate-400 text-xs md:text-sm'>{project.category}</p>
                   <p className='subtext-open text-secondary text-xs md:text-sm flex items-center cursor-pointer'>
-                    <Link key={project.slug.current} href={`/project/${project.slug.current}`}>
+                    <Link key={project.slug.current} href={`/project/${project.slug.current}`} scroll={false} className='w-full flex items-center'>
                       <span className='mr-2'>View project</span>
+                      <HiOutlineArrowNarrowRight />
                     </Link>
-                    <HiOutlineArrowNarrowRight />
                   </p>
                 </div>
               </div>

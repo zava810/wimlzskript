@@ -35,7 +35,7 @@ export default async function RootLayout(props: { children: React.ReactNode, mod
     <html lang="en">
       <body className={`${robotoMono.variable} ${roboto.variable} font-sans`}>
         <main>
-          <div className="pb-5 px-2 min-h-screen bg-primary font-roboto_mono">
+          <div className="pb-5 min-h-screen bg-primary font-roboto_mono">
             <Header headerData={headerData} />
             <div className='min-h-[90vh] pt-16'>
               {/* <DotPattern 
@@ -56,5 +56,3 @@ export default async function RootLayout(props: { children: React.ReactNode, mod
     </html>
   )
 }
-
-export const revalidate = 3600 * 24;

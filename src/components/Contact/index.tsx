@@ -16,7 +16,7 @@ function Contact({ }: Props) {
           <h2 className='dark:text-slate-200 text-2xl mb-10' id='contact'>Get In Touch</h2>
         </BlurFade>
         <BlurFade delay={0.25 * 2} inView>
-          <p className=' text-slate-400 mb-5 leading-6 md:leading-7 lg:leading-8 text-sm lg:text-base'>
+          <p className=' text-slate-400 mb-8 leading-6 md:leading-7 lg:leading-8 text-sm lg:text-base'>
             Thank you for visiting my portfolio website. Although I’m not currently looking for any new opportunities, my inbox is always open.
             Whether you have a question or just want to say hi, I’ll try my best to get back to you!. Alternatively, you can also find me on LinkedIn.
             Feel free to connect with me and view my professional profile for more information about my background and experience.
