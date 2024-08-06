@@ -84,7 +84,7 @@ export default function Footer() {
         </p> : <Skeleton className="w-[60px] h-[16px] rounded-sm" />} */}
           <p className=" font-light text-slate-400 text-xs text-center">
             Designed and developed by Vishnu Surendran. <br />
-            Built with Next.js, Tailwind CSS and Magic UI, deployed with Vercel.
+            Built with Next.js and Sanity.io.
           </p>
         </footer>
       </BlurFade>

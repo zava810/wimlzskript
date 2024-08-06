@@ -51,5 +51,3 @@ export default async function RootLayout(props : {children: React.ReactNode, mod
       </html>
     )
   }
-
-  export const revalidate = 3600 * 24;
