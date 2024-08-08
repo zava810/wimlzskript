@@ -13,10 +13,10 @@ async function BlogPage({ params }: { params: { slug: string } }) {
                 <div>Published on: {getLocalDate(post?.pubDate)}</div>
             </div>
             <p className='text-slate-200 blog-post' dangerouslySetInnerHTML={{ __html: post?.content || '<div></div>' }}></p>
-            <div className='flex pt-14'>
+            <div className='flex flex-wrap gap-3 pt-14'>
                 {
                     post?.categories.map((category, index) => {
-                        return <div key={index} className='bg-lightNavy px-5 py-2 text-sm rounded-3xl mr-3'>{category}</div>
+                        return <div key={index} className='flex items-center justify-center text-nowrap bg-lightNavy px-5 py-2 text-sm rounded-3xl text-center'>{category}</div>
                     })
                 }
             </div>
