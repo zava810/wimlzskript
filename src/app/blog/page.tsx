@@ -1,12 +1,16 @@
 import React from 'react'
+import { getMediumPosts } from '../../actions/blog-action';
+import BlogList from './BlogList';
 
-type Props = {}
-
-const Blog = (props: Props) => {
+const Blog = async () => {
+  const posts = await getMediumPosts();
   return (
     <>
-      <div className='w-screen h-screen text-3xl bg-primary text-teal-500 grid place-items-center'>
-        Under maintenance
+      <div className='w-screen min-h-screen bg-primary text-teal-500 px-80 py-20'>
+        <h2 className='text-2xl text-slate-200 font-semibold mb-5'>Checkout my latest blogs</h2>
+        <div className='py-5'>
+          <BlogList posts={posts.items} />
+        </div>
       </div>
     </>
   )
