@@ -33,7 +33,7 @@ function Projects({ data }: Props) {
                   <h4 className='leading-6 md:leading-7 lg:leading-8 text-base md:text-lg mb-auto'>{project.name}</h4>
                   <p className='subtext text-slate-400 text-xs md:text-sm'>{project.category}</p>
                   <p className='subtext-open text-secondary text-xs md:text-sm flex items-center cursor-pointer'>
-                    <Link key={project.slug.current} href={`/project/${project.slug.current}`} scroll={false} className='w-full flex items-center'>
+                    <Link key={project.slug.current} href={`/project/${project.slug.current}`} scroll={false} prefetch={true} className='w-full flex items-center'>
                       <span className='mr-2'>View project</span>
                       <HiOutlineArrowNarrowRight />
                     </Link>
