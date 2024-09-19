@@ -37,7 +37,7 @@ function Hero({ data }: Props) {
           </BlurFade>
           <BlurFade delay={0.25 * 3} inView>
             <div className='overflow-hidden'>
-              <h4 className='text-lg md:text-2xl lg:text-3xl font-medium tracking-tight font-roboto-mono mb-1 md:mb-5 whitespace-nowrap'>
+              <h4 className='text-lg md:text-2xl lg:text-3xl font-medium tracking-tight font-source_code_pro mb-1 md:mb-5 whitespace-nowrap'>
                 <span>{text}</span>
                 <Cursor cursorColor='#14B8A6' />
               </h4>

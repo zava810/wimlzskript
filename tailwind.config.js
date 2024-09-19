@@ -19,7 +19,8 @@ module.exports = {
       },
       fontFamily: {
         roboto_mono: ['var(--font-roboto-mono)', ...fontFamily.sans],
-        roboto: ['var(--font-roboto)', ...fontFamily.sans]
+        roboto: ['var(--font-roboto)', ...fontFamily.sans],
+        source_code_pro: ['var(--font-source-code-pro)', ...fontFamily.sans]
       },
       animation: {
         "accordion-down": "accordion-down 0.3s ease-out",

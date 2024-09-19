@@ -21,7 +21,8 @@ function Loading() {
                 <span></span>
                 <span></span>
             </div>
-            <h1>Redirecting</h1></div>
+            {/* <h1>Redirecting</h1> */}
+        </div>
     )
 }
 
