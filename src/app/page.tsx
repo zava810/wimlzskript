@@ -14,7 +14,7 @@ type Props = {
 }
 
 export const metadata: Metadata = {
-  title: 'wiml itslab',
+  title: 'itslab.vercel.app',
   description: 'Personal portfolio'
 }
 
