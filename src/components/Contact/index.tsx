@@ -7,7 +7,7 @@ type Props = {}
 
 function Contact({ }: Props) {
   const sendMail = () => {
-    window.location.href = "mailto:vishnuksvichu12345@gmail.com"
+    window.location.href = "mailto:vimalkg@gmail.com"
   }
   return (
     <section className='flex flex-col px-5 py-10 mb-10 box' id='contact'>

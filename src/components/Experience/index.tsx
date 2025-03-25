@@ -1,17 +1,11 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { slideFromLeft, slideFromRight } from "../../utils/Animations";
 import { MdLocationOn } from "react-icons/md";
 import { PortableText } from "@portabletext/react";
 import { ExperienceData } from "../../utils/types";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "../ui/accordion";
 import BlurFade from "../magicui/blur-fade";
 
 type Props = {
